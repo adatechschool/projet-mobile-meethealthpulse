@@ -14,7 +14,7 @@ struct AccountSettingsView: View {
                 VStack {
                     HStack {
                         // Lien vers "Menu"
-                        NavigationLink(destination: Text("Menu")) {
+                        NavigationLink(destination: menuView()) {
                             HStack {
                                 // Ajout de l'icon "back"
                                 Image(systemName: "arrow.left.circle.fill")
