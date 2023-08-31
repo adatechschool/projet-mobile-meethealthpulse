@@ -11,7 +11,28 @@ struct AccountSettingsView: View {
     var body: some View {
         NavigationView{
             ZStack{
-                Text("Account Settings")
+                VStack {
+                    HStack {
+                        // Lien vers "Menu"
+                        NavigationLink(destination: Text("Menu")) {
+                            HStack {
+                                // Ajout de l'icon "back"
+                                Image(systemName: "arrow.left.circle.fill")
+                                    .foregroundColor(Color.black)
+                                    .padding(.leading)
+                                    .imageScale(.large)
+                            }
+                        }
+                        // Ajout du titre "Account Settings"
+                        Text("Account Settings")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .multilineTextAlignment(.center)
+                            .padding(.leading, -45.0)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                    }
+                    Spacer()
+                }
             }
         }
     }
