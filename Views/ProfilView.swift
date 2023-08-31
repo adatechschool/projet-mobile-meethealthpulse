@@ -13,19 +13,21 @@ struct ProfilView: View {
             ZStack{
                 VStack {
                     HStack {
+                        //Spacer() // ça permet de pousser le contenu vers la gauche laissant l'icône à droite
+                        
                         // Lien vers "Menu"
                         NavigationLink(destination: MenuView()) {
                             Image(systemName: "line.3.horizontal")
                                 .foregroundColor(Color.black)
                                 .imageScale(.large)
                         }
-                        // Ajout du titre "My Profil"
-                        Text("My Profil")
-                            .font(.title2)
-                            .fontWeight(.bold)
-                            .multilineTextAlignment(.center)
-                            .padding(.leading, -45.0)
-                            .frame(maxWidth: .infinity, alignment: .center)
+                        //.padding(.trailing)// Ajout du padding à droite
+                        
+                        
+                        // Ajout du padding à gauche
+                        .padding(.leading)
+                        // ça permet de pousser le contenu vers la droite laissant l'icône à gauche
+                        Spacer()
                     }
                     Spacer()
                 }
@@ -48,6 +50,9 @@ struct ProfilView: View {
                 }
                 
             }
+            // Définir le titre de navigation
+            .listStyle(PlainListStyle())
+            .navigationTitle("My Profil")
         }
     }
 }
