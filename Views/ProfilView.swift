@@ -9,7 +9,49 @@ import SwiftUI
 
 struct ProfilView: View {
     var body: some View {
-        Text("My Profil")
+        NavigationView{
+            ZStack{
+                VStack {
+                    HStack {
+                        // Lien vers "Menu"
+                        NavigationLink(destination: menuView()) {
+                            HStack {
+                                // Ajout de l'icon "back"
+                                Image(systemName: "line.3.horizontal")
+                                    .foregroundColor(Color.black)
+                                    .padding(.leading)
+                                    .imageScale(.large)
+                            }
+                        }
+                        // Ajout du titre "My Profil"
+                        Text("My Profil")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .multilineTextAlignment(.center)
+                            .padding(.leading, -45.0)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                    }
+                    Spacer()
+                }
+                VStack{
+                    Image("imagepardefault")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 300, height: 300)
+                    
+                    Image(systemName: "figure.open.water.swim")
+                        .foregroundColor(Color.black)
+                        .padding(.leading)
+                        .imageScale(.large)
+                        
+                    Text("Welcome 🥳")
+                        .font(.title)
+                        .fontWeight(.black)
+                    
+                }
+                
+            }
+        }
     }
 }
 
