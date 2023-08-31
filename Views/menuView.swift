@@ -16,10 +16,16 @@ struct menuView: View {
                     .cornerRadius(8)
                 VStack {
                     HStack {
-                        // Ajout de l'icon "back"
-                        Image(systemName: "arrow.left.circle.fill")
-                            .padding(.leading)
-                            .imageScale(.large)
+                        // Lien vers "Profil"
+                        NavigationLink(destination: Text("Profil")) {
+                            HStack {
+                            // Ajout de l'icon "back"
+                                Image(systemName: "arrow.left.circle.fill")
+                                    .foregroundColor(Color.black)
+                                    .padding(.leading)
+                                    .imageScale(.large)
+                            }
+                        }
                     // Ajout du titre "Menu"
                     Text("Menu")
                         .font(.title2)
