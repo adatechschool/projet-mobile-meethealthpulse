@@ -15,6 +15,7 @@
 		7B9B799E2A9CE23B00D9D4C1 /* meet_health_pulseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B799D2A9CE23B00D9D4C1 /* meet_health_pulseUITests.swift */; };
 		7B9B79A02A9CE23B00D9D4C1 /* meet_health_pulseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B799F2A9CE23B00D9D4C1 /* meet_health_pulseUITestsLaunchTests.swift */; };
 		8FCC776C2AA07E9200FB515A /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCC776B2AA07E9200FB515A /* Users.swift */; };
+		8FCC77702AA0803000FB515A /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 8FCC776F2AA0803000FB515A /* users.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		7B9B799D2A9CE23B00D9D4C1 /* meet_health_pulseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meet_health_pulseUITests.swift; sourceTree = "<group>"; };
 		7B9B799F2A9CE23B00D9D4C1 /* meet_health_pulseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meet_health_pulseUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8FCC776B2AA07E9200FB515A /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		8FCC776F2AA0803000FB515A /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 		8FCC776A2AA07D0100FB515A /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
+				8FCC776F2AA0803000FB515A /* users.json */,
 			);
 			path = Ressources;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FCC77702AA0803000FB515A /* users.json in Resources */,
 				7B9B798A2A9CE23B00D9D4C1 /* Preview Assets.xcassets in Resources */,
 				7B9B79872A9CE23B00D9D4C1 /* Assets.xcassets in Resources */,
 			);
