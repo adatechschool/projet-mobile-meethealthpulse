@@ -34,20 +34,20 @@ struct ProfilView: View {
                     Spacer()
                 }
                 VStack{
+                    // Ajout de la photo de profil
                     Image("imagepardefault")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 300, height: 300)
-                    
+                    // Ajout de l'icon du Sport
                     Image(systemName: "figure.open.water.swim")
                         .foregroundColor(Color.black)
                         .padding(.leading)
                         .imageScale(.large)
-                        
+                    // Ajout du Welcome (+ Pseudo du profil)
                     Text("Welcome 🥳")
                         .font(.title)
                         .fontWeight(.black)
-                    
                 }
                 
             }
