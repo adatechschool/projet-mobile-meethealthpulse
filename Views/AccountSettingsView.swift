@@ -12,28 +12,25 @@ struct AccountSettingsView: View {
         NavigationView{
             ZStack{
                 VStack {
-                    HStack {
-                        // Lien vers "Menu"
-                        NavigationLink(destination: menuView()) {
-                            HStack {
-                                // Ajout de l'icon "back"
-                                Image(systemName: "arrow.left.circle.fill")
-                                    .foregroundColor(Color.black)
-                                    .padding(.leading)
-                                    .imageScale(.large)
-                            }
-                        }
-                        // Ajout du titre "Account Settings"
-                        Text("Account Settings")
-                            .font(.title2)
-                            .fontWeight(.bold)
-                            .multilineTextAlignment(.center)
-                            .padding(.leading, -45.0)
-                            .frame(maxWidth: .infinity, alignment: .center)
-                    }
+                    // Ajout du titre "My Profil"
+                    Text("Add a new photo")
+                        .font(.title2)
+                        .fontWeight(.medium)
+                        .multilineTextAlignment(.center)
+                        .padding(.leading, -45.0)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                    // Ajout de la photo de profil
+                    Image("imagepardefault")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 300, height: 300)
                     Spacer()
                 }
+                
             }
+            // Définir le titre de navigation
+            .listStyle(PlainListStyle())
+            .navigationTitle("Account Settings")
         }
     }
 }
