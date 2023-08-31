@@ -15,7 +15,9 @@ struct menuView: View {
                     .cornerRadius(8)
                 VStack {
                     HStack {
-                        
+                        Image(systemName: "arrow.left.circle.fill")
+                            .padding(.leading)
+                            .imageScale(.large)
                     Text("Menu")
                         .font(.title2)
                         .fontWeight(.bold)
@@ -27,28 +29,31 @@ struct menuView: View {
                     List {
                         NavigationLink(destination: Text("Account Settings")) {
                             HStack {
-                                
+                                Image(systemName: "person.circle")
+                                    .imageScale(.medium)
                                 Text("Account Settings")
                                     .multilineTextAlignment(.center)
                             }
                         }
                         NavigationLink(destination: Text("Notifications")) {
                             HStack {
-                                
+                                Image(systemName: "bell")
+                                    .imageScale(.medium)
                                 Text("Notifications")
                                     .multilineTextAlignment(.center)
                             }
                         }
                         NavigationLink(destination: Text("Find Friends")) {
                             HStack {
-                                
+                                Image(systemName: "person.badge.plus")
+                                    .imageScale(.medium)
                                 Text("Find Friends")
                                     .multilineTextAlignment(.center)
                             }
                         }
-                        NavigationLink(destination: Text("HomeView")) {
-                            HStack {
-                            
+                        NavigationLink(destination: Text("HomeView")) { HStack {
+                            Image(systemName: "rectangle.lefthalf.inset.filled.arrow.left")
+                                .imageScale(.medium)
                             Text("Sign Out")
                                 .multilineTextAlignment(.center)
                             }
