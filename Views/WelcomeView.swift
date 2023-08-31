@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Welcome: View {
+struct WelcomeView: View {
     var body: some View {
         VStack {
             
@@ -35,6 +35,7 @@ struct Welcome: View {
                     // Go to Create account view
                 }, label: {
                     Text("Sign In")
+                        .fontWeight(.bold)
                         .frame(width: 150,
                                height: 50,
                                alignment: .center)
@@ -46,8 +47,7 @@ struct Welcome: View {
                 
                 Button(action: {
                     //  Go to Log in view
-                    
-                }, label: {
+                    }, label: {
                     Text("Log In")
                         .fontWeight(.bold)
                         .frame(width: 150,
@@ -59,7 +59,6 @@ struct Welcome: View {
                 })
                 .padding()
             }
-                
             
             Spacer()
         }
@@ -69,6 +68,6 @@ struct Welcome: View {
 
 struct Welcome_Previews: PreviewProvider {
     static var previews: some View {
-        Welcome()
+        WelcomeView()
     }
 }

@@ -16,7 +16,7 @@ class FormLogInViewModel: ObservableObject{
     
 }
 
-struct LogIn: View {
+struct LogInView: View {
     @StateObject var viewModel = FormLogInViewModel()
     
     var body: some View {
@@ -24,11 +24,11 @@ struct LogIn: View {
             VStack(alignment: .center){
                 HStack {
                     Text("Log in below or")
-                    Group {
-                        Text("create an account")
+                    
+                    NavigationLink(destination: CreateAccountView()){ Text("create an account")
+                            .foregroundColor(Color.black)
                             .bold()
-                        .underline()
-                    }
+                            .underline()}
                 }
                 
                 Form {
@@ -69,6 +69,6 @@ struct LogIn: View {
 
 struct LogIn_Previews: PreviewProvider {
     static var previews: some View {
-        LogIn()
+        LogInView()
     }
 }

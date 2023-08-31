@@ -16,21 +16,21 @@ class FormViewModel: ObservableObject{
     
 }
 
-struct CreateAccount: View {
+struct CreateAccountView: View {
     
     @StateObject var viewModel = FormViewModel()
     
     var body: some View {
         NavigationView {
             VStack(alignment: .center){
-                HStack {
-                    Text("Enter your account details below or")
-                    Group {
-                        Text("log in")
-                            .bold()
-                        .underline()
+                    HStack {
+                        Text("Enter your account details below or")
+                        
+                        NavigationLink(destination: LogInView()){ Text("log in")
+                                .foregroundColor(Color.black)
+                                .bold()
+                                .underline()}
                     }
-                }
                 
                 Form {
                     
@@ -78,7 +78,7 @@ struct CreateAccount: View {
 
 struct CreateAccount_Previews: PreviewProvider {
     static var previews: some View {
-        CreateAccount()
+        CreateAccountView()
             //.preferredColorScheme(.dark)
     }
 }
