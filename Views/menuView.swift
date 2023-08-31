@@ -16,7 +16,12 @@ struct menuView: View {
                 VStack {
                     HStack {
                         
-                    
+                    Text("Menu")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
+                        .padding(.leading, -45.0)
+                        .frame(maxWidth: .infinity, alignment: .center)
                     }
                     Spacer()
                     List {
