@@ -17,7 +17,7 @@ struct menuView: View {
                 VStack {
                     HStack {
                         // Lien vers "Profil"
-                        NavigationLink(destination: Text("Profil")) {
+                        NavigationLink(destination: ProfilView()) {
                             HStack {
                             // Ajout de l'icon "back"
                                 Image(systemName: "arrow.left.circle.fill")
@@ -38,7 +38,7 @@ struct menuView: View {
                     // Ajout de la liste des liens de navigation
                     List {
                         // Lien vers "AccountSettings"
-                        NavigationLink(destination: Text("Account Settings")) {
+                        NavigationLink(destination: AccountSettingsView()) {
                             HStack {
                                 // Ajout de l'icon "person.circle"
                                 Image(systemName: "person.circle")
