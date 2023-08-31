@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B8B2CE72AA091BF0085EF28 /* menuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8B2CE62AA091BF0085EF28 /* menuView.swift */; };
 		7B9B79832A9CE23900D9D4C1 /* meet_health_pulseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B79822A9CE23900D9D4C1 /* meet_health_pulseApp.swift */; };
 		7B9B79852A9CE23900D9D4C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B79842A9CE23900D9D4C1 /* ContentView.swift */; };
 		7B9B79872A9CE23B00D9D4C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B9B79862A9CE23B00D9D4C1 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B8B2CE62AA091BF0085EF28 /* menuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuView.swift; sourceTree = "<group>"; };
 		7B9B797F2A9CE23900D9D4C1 /* meet_health_pulse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meet_health_pulse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9B79822A9CE23900D9D4C1 /* meet_health_pulseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meet_health_pulseApp.swift; sourceTree = "<group>"; };
 		7B9B79842A9CE23900D9D4C1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				7B9B79842A9CE23900D9D4C1 /* ContentView.swift */,
+				7B8B2CE62AA091BF0085EF28 /* menuView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B9B79852A9CE23900D9D4C1 /* ContentView.swift in Sources */,
+				7B8B2CE72AA091BF0085EF28 /* menuView.swift in Sources */,
 				8FCC776C2AA07E9200FB515A /* Users.swift in Sources */,
 				7B9B79832A9CE23900D9D4C1 /* meet_health_pulseApp.swift in Sources */,
 			);
