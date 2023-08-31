@@ -7,34 +7,11 @@
 
 import SwiftUI
 
-struct menuView: View {
+struct MenuView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                // Ajout des bords arrondis
-                Color.white
-                    .cornerRadius(8)
                 VStack {
-                    HStack {
-                        // Lien vers "Profil"
-                        NavigationLink(destination: ProfilView()) {
-                            HStack {
-                            // Ajout de l'icon "back"
-                                Image(systemName: "arrow.left.circle.fill")
-                                    .foregroundColor(Color.black)
-                                    .padding(.leading)
-                                    .imageScale(.large)
-                            }
-                        }
-                    // Ajout du titre "Menu"
-                    Text("Menu")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .multilineTextAlignment(.center)
-                        .padding(.leading, -45.0)
-                        .frame(maxWidth: .infinity, alignment: .center)
-                    }
-                    Spacer()
                     // Ajout de la liste des liens de navigation
                     List {
                         // Lien vers "AccountSettings"
@@ -78,18 +55,24 @@ struct menuView: View {
                             }
                         }
                     }
-                }// Ajout du style shadow
+                }
+                .padding( )
+                // Ajout du style shadow
                 .shadow(color: Color.black.opacity(0.2),
                          radius: 5,
                          x: 0,
                          y: 2)
+               
             }
+            // Définir le titre de navigation "Menu"
+            .listStyle(PlainListStyle())
+            .navigationTitle("Menu")
         }
     }
 }
 
 struct menuView_Previews: PreviewProvider {
     static var previews: some View {
-        menuView()
+        MenuView()
     }
 }

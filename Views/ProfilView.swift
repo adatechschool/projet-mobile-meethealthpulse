@@ -14,14 +14,10 @@ struct ProfilView: View {
                 VStack {
                     HStack {
                         // Lien vers "Menu"
-                        NavigationLink(destination: menuView()) {
-                            HStack {
-                                // Ajout de l'icon "back"
-                                Image(systemName: "line.3.horizontal")
-                                    .foregroundColor(Color.black)
-                                    .padding(.leading)
-                                    .imageScale(.large)
-                            }
+                        NavigationLink(destination: MenuView()) {
+                            Image(systemName: "line.3.horizontal")
+                                .foregroundColor(Color.black)
+                                .imageScale(.large)
                         }
                         // Ajout du titre "My Profil"
                         Text("My Profil")
@@ -33,6 +29,7 @@ struct ProfilView: View {
                     }
                     Spacer()
                 }
+                .padding()
                 VStack{
                     // Ajout de la photo de profil
                     Image("imagepardefault")
