@@ -11,6 +11,7 @@ struct menuView: View {
     var body: some View {
         NavigationView {
             ZStack {
+                // Ajout des bords arrondis
                 Color.white
                     .cornerRadius(8)
                 VStack {
