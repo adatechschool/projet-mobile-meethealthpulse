@@ -19,7 +19,7 @@ struct ProfilView: View {
                     HStack {
                         
                         // Lien vers "Menu"
-                        NavigationLink(destination: MenuView()) {
+                        NavigationLink(destination: MenuView().navigationBarBackButtonHidden(true)) {
                             Image(systemName: "line.3.horizontal")
                                 .foregroundColor(Color.black)
                                 .imageScale(.large)
