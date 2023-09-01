@@ -18,17 +18,28 @@ class FormLogInViewModel: ObservableObject{
 
 struct LogInView: View {
     @StateObject var viewModel = FormLogInViewModel()
+    @State private var createAccount = false
     
     var body: some View {
         NavigationView {
             VStack(alignment: .center){
+                Text("Welcome back")
+                    .font(.title)
+                    .bold()
+                    .padding(.bottom,5)
                 HStack {
                     Text("Log in below or")
                     
-                    NavigationLink(destination: CreateAccountView()){ Text("create an account")
-                            .foregroundColor(Color.black)
-                            .bold()
-                            .underline()}
+                    Button {
+                        createAccount.toggle()
+                    } label: {
+                        Text("create an account")
+                            .underline()
+                            .foregroundColor(.black)
+                            .fontWeight(.bold)
+                    }
+
+                    
                 }
                 
                 Form {
@@ -38,12 +49,19 @@ struct LogInView: View {
                     
                     Section(
                         header: Text("Password"),
-                        footer: Text("Forgot Password")
-                            .underline()
+                        footer: Button(action: {
+                            //send an email
+                        }, label: {
+                            Text("Forgot Password")
+                                .font(.subheadline)
+                                .underline()
+                                .foregroundColor(.gray)
+                        })
                     ) {
                             
                             SecureField("Password", text: $viewModel.password)
-                            }
+                    }
+                    
                 }
                 
                 Button(action: {
@@ -61,9 +79,10 @@ struct LogInView: View {
                 .padding()
                 
             }
-            .navigationTitle("Welcome back!")
         }
-        
+        .fullScreenCover(isPresented: $createAccount) {
+            CreateAccountView()
+        }
     }
 }
 

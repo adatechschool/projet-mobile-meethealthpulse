@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    
+    @State private var logIn = false
+    @State private var signIn = false
+    
     var body: some View {
         VStack {
             
@@ -33,6 +37,8 @@ struct WelcomeView: View {
             HStack {
                 Button(action: {
                     // Go to Create account view
+                    signIn.toggle()
+                    
                 }, label: {
                     Text("Sign In")
                         .fontWeight(.bold)
@@ -47,6 +53,8 @@ struct WelcomeView: View {
                 
                 Button(action: {
                     //  Go to Log in view
+                    logIn.toggle()
+                    
                     }, label: {
                     Text("Log In")
                         .fontWeight(.bold)
@@ -63,6 +71,13 @@ struct WelcomeView: View {
             Spacer()
         }
         .padding(.top,50)
+        .fullScreenCover(isPresented: $logIn){
+            LogInView()
+        }
+        .fullScreenCover(isPresented: $signIn){
+            CreateAccountView()
+        }
+        
     }
 }
 

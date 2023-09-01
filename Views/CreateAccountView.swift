@@ -19,17 +19,27 @@ class FormViewModel: ObservableObject{
 struct CreateAccountView: View {
     
     @StateObject var viewModel = FormViewModel()
+    @State private var logIn = false
     
     var body: some View {
         NavigationView {
             VStack(alignment: .center){
+                Text("Create an account")
+                    .font(.title)
+                    .bold()
+                    .padding(.bottom,5)
+                
                     HStack {
                         Text("Enter your account details below or")
                         
-                        NavigationLink(destination: LogInView()){ Text("log in")
-                                .foregroundColor(Color.black)
-                                .bold()
-                                .underline()}
+                        Button {
+                            logIn.toggle()
+                        } label: {
+                            Text("log in")
+                                .underline()
+                                .foregroundColor(.black)
+                                .fontWeight(.bold)
+                        }
                     }
                 
                 Form {
@@ -63,14 +73,16 @@ struct CreateAccountView: View {
                         .frame(width: 150,
                                height: 50,
                                alignment: .center)
-                        .background(Color.gray)
+                        .background(Color("Primary"))
                         .foregroundColor(.white)
                         .cornerRadius(8)
                 })
                 .padding()
                 
             }
-            .navigationTitle("Create an account")
+        }
+        .fullScreenCover(isPresented: $logIn) {
+            LogInView()
         }
         
     }
