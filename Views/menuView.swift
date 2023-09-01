@@ -13,6 +13,23 @@ struct MenuView: View {
             ZStack {
                 VStack {
                     
+                    HStack {
+                        
+                        // Lien vers "Profil"
+                        NavigationLink(destination: ProfilView().navigationBarBackButtonHidden(true)) {
+                            Image(systemName: "person.fill")
+                                .foregroundColor(Color.black)
+                                .imageScale(.large)
+                        }
+                        
+                        // Ajout du padding à gauche
+                        .padding(.leading)
+                        
+                        // ça permet de pousser le contenu vers la droite laissant l'icône à gauche
+                        Spacer()
+                    }
+                    Spacer()
+                    
                     // Ajout de la liste des liens de navigation
                     List {
                         
@@ -50,7 +67,7 @@ struct MenuView: View {
                         }
                         
                         // Lien vers "HomeView"
-                        NavigationLink(destination: Text("HomeView")) {
+                        NavigationLink(destination: WelcomeView()) {
                             HStack {
                             // Ajout de l'icon "Sign Out"
                             Image(systemName: "rectangle.lefthalf.inset.filled.arrow.left")
