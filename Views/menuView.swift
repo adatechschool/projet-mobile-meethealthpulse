@@ -36,6 +36,7 @@ struct MenuView: View {
                         // Lien vers "AccountSettings"
                         NavigationLink(destination: AccountSettingsView()) {
                             HStack {
+                                
                                 // Ajout de l'icon "person.circle"
                                 Image(systemName: "person.circle")
                                     .imageScale(.medium)
@@ -47,6 +48,7 @@ struct MenuView: View {
                         // Lien vers "Notifications"
                         NavigationLink(destination: Text("Notifications")) {
                             HStack {
+                                
                                 // Ajout de l'icon "bell"
                                 Image(systemName: "bell")
                                     .imageScale(.medium)
@@ -58,6 +60,7 @@ struct MenuView: View {
                         // Lien vers "Find Friends"
                         NavigationLink(destination: Text("Find Friends")) {
                             HStack {
+                                
                                 // Ajout de l'icon "person.badge.plus"
                                 Image(systemName: "person.badge.plus")
                                     .imageScale(.medium)
@@ -67,8 +70,9 @@ struct MenuView: View {
                         }
                         
                         // Lien vers "HomeView"
-                        NavigationLink(destination: WelcomeView()) {
+                        NavigationLink(destination: WelcomeView().navigationBarBackButtonHidden(true)) {
                             HStack {
+                                
                             // Ajout de l'icon "Sign Out"
                             Image(systemName: "rectangle.lefthalf.inset.filled.arrow.left")
                                 .imageScale(.medium)
