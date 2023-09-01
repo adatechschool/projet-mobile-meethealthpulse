@@ -87,7 +87,7 @@ struct ProfilView: View {
         }
         // Pour afficher la HomeView de manière qu'elle recouvre tout l'écran
         .fullScreenCover(isPresented: $showHomeView) {
-            MenuView()
+            WelcomeView()
         }
     }
 }

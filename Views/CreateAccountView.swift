@@ -20,6 +20,7 @@ struct CreateAccountView: View {
     
     @StateObject var viewModel = FormViewModel()
     @State private var logIn = false
+    @State private var signOn = false
     
     var body: some View {
         NavigationView {
@@ -68,6 +69,7 @@ struct CreateAccountView: View {
                 
                 Button(action: {
                     // Send to Database
+                    signOn.toggle()
                 }, label: {
                     Text("Sign In")
                         .frame(width: 150,
@@ -83,6 +85,9 @@ struct CreateAccountView: View {
         }
         .fullScreenCover(isPresented: $logIn) {
             LogInView()
+        }
+        .fullScreenCover(isPresented: $signOn) {
+            ProfilView()
         }
         
     }

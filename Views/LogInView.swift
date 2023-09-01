@@ -19,6 +19,7 @@ class FormLogInViewModel: ObservableObject{
 struct LogInView: View {
     @StateObject var viewModel = FormLogInViewModel()
     @State private var createAccount = false
+    @State private var logOn = false
     
     var body: some View {
         NavigationView {
@@ -66,6 +67,7 @@ struct LogInView: View {
                 
                 Button(action: {
                     // Send to Database
+                    logOn.toggle()
                 }, label: {
                     Text("Log In")
                         .fontWeight(.bold)
@@ -82,6 +84,9 @@ struct LogInView: View {
         }
         .fullScreenCover(isPresented: $createAccount) {
             CreateAccountView()
+        }
+        .fullScreenCover(isPresented: $logOn) {
+            ProfilView()
         }
     }
 }
