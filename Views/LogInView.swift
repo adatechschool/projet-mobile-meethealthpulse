@@ -7,19 +7,19 @@
 
 import SwiftUI
 
-class FormLogInViewModel: ObservableObject{
-    @State var username = ""
-    @State var dateOfBirth = ""
+/*class FormLogInViewModel: ObservableObject{
     @State var email = ""
     @State var password = ""
-    @State var passwordAgain = ""
     
-}
+    
+}*/
 
 struct LogInView: View {
-    @StateObject var viewModel = FormLogInViewModel()
+    //@State  var viewModel = FormLogInViewModel()
     @State private var createAccount = false
     @State private var logOn = false
+    @State private var email = ""
+    @State private var password = ""
     
     var body: some View {
         NavigationView {
@@ -45,7 +45,9 @@ struct LogInView: View {
                 
                 Form {
                     Section(header: Text("Email")) {
-                        TextField("email@example", text: $viewModel.email)
+                        TextField("email@example", text: //$viewModel.email
+                        $email)
+                        
                     }
                     
                     Section(
@@ -60,10 +62,12 @@ struct LogInView: View {
                         })
                     ) {
                             
-                            SecureField("Password", text: $viewModel.password)
+                            SecureField("Password", text: //$viewModel.password
+                            $password)
                     }
                     
                 }
+                .textInputAutocapitalization(.never)
                 
                 Button(action: {
                     // Send to Database
@@ -88,6 +92,8 @@ struct LogInView: View {
         .fullScreenCover(isPresented: $logOn) {
             ProfilView()
         }
+        
+        
     }
 }
 
