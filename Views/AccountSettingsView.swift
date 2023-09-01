@@ -102,6 +102,16 @@ struct AccountSettingsView: View {
             // Définir le titre de navigation
             .listStyle(PlainListStyle())
             .navigationTitle("Account Settings")
+            
+            // Pour afficher le titre de manière réduite
+            .navigationBarTitleDisplayMode(.inline)
+            
+            // Pour cacher le bouton de retour par défaut
+            .navigationBarBackButtonHidden(true)
+        }
+        // Pour afficher ProfilView de manière qu'elle recouvre tout l'écran
+        .fullScreenCover(isPresented: $showProfilView) {
+            ProfilView()
         }
     }
 }

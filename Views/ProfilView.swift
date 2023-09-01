@@ -78,6 +78,16 @@ struct ProfilView: View {
             // Définir le titre de navigation "My Profil"
             .listStyle(PlainListStyle())
             .navigationTitle("My Profil")
+            
+            // Pour afficher le titre de manière réduite
+            .navigationBarTitleDisplayMode(.inline)
+            
+            // Pour cacher le bouton de retour par défaut
+            .navigationBarBackButtonHidden(true)
+        }
+        // Pour afficher la HomeView de manière qu'elle recouvre tout l'écran
+        .fullScreenCover(isPresented: $showHomeView) {
+            MenuView()
         }
     }
 }
