@@ -11,7 +11,7 @@ import SwiftUI
 struct meet_health_pulseApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ProfilView()
         }
     }
 }

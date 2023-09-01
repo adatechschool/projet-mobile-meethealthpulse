@@ -12,8 +12,10 @@ struct MenuView: View {
         NavigationView {
             ZStack {
                 VStack {
+                    
                     // Ajout de la liste des liens de navigation
                     List {
+                        
                         // Lien vers "AccountSettings"
                         NavigationLink(destination: AccountSettingsView()) {
                             HStack {
@@ -24,6 +26,7 @@ struct MenuView: View {
                                     .multilineTextAlignment(.center)
                             }
                         }
+                        
                         // Lien vers "Notifications"
                         NavigationLink(destination: Text("Notifications")) {
                             HStack {
@@ -34,6 +37,7 @@ struct MenuView: View {
                                     .multilineTextAlignment(.center)
                             }
                         }
+                        
                         // Lien vers "Find Friends"
                         NavigationLink(destination: Text("Find Friends")) {
                             HStack {
@@ -44,6 +48,7 @@ struct MenuView: View {
                                     .multilineTextAlignment(.center)
                             }
                         }
+                        
                         // Lien vers "HomeView"
                         NavigationLink(destination: Text("HomeView")) {
                             HStack {
@@ -57,16 +62,17 @@ struct MenuView: View {
                     }
                 }
                 .padding( )
-                // Ajout du style shadow
-                .shadow(color: Color.black.opacity(0.2),
-                         radius: 5,
-                         x: 0,
-                         y: 2)
-               
             }
+            
             // Définir le titre de navigation "Menu"
             .listStyle(PlainListStyle())
             .navigationTitle("Menu")
+            
+            // Pour afficher le titre de manière réduite
+            .navigationBarTitleDisplayMode(.inline)
+            
+            // Pour cacher le bouton de retour par défaut
+            .navigationBarBackButtonHidden(true)
         }
     }
 }
