@@ -85,7 +85,7 @@ struct CreateAccountView: View {
                     // Send to Database
                     signOn.toggle()
                 }, label: {
-                    Text("Sign In")
+                    Text("Sign On")
                         .frame(width: 150,
                                height: 50,
                                alignment: .center)
