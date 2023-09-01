@@ -19,6 +19,9 @@
 		7B9B79A02A9CE23B00D9D4C1 /* meet_health_pulseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B799F2A9CE23B00D9D4C1 /* meet_health_pulseUITestsLaunchTests.swift */; };
 		8FCC776C2AA07E9200FB515A /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCC776B2AA07E9200FB515A /* Users.swift */; };
 		8FCC77702AA0803000FB515A /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 8FCC776F2AA0803000FB515A /* users.json */; };
+		8FCC77722AA0843D00FB515A /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCC77712AA0843D00FB515A /* CreateAccountView.swift */; };
+		8FCC77742AA0C21C00FB515A /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCC77732AA0C21C00FB515A /* LogInView.swift */; };
+		8FCC77762AA0CA1000FB515A /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCC77752AA0CA1000FB515A /* WelcomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,9 @@
 		7B9B799F2A9CE23B00D9D4C1 /* meet_health_pulseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meet_health_pulseUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8FCC776B2AA07E9200FB515A /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		8FCC776F2AA0803000FB515A /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
+		8FCC77712AA0843D00FB515A /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
+		8FCC77732AA0C21C00FB515A /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		8FCC77752AA0CA1000FB515A /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,9 +149,15 @@
 			isa = PBXGroup;
 			children = (
 				7B9B79842A9CE23900D9D4C1 /* ContentView.swift */,
+ 
+				8FCC77712AA0843D00FB515A /* CreateAccountView.swift */,
+				8FCC77732AA0C21C00FB515A /* LogInView.swift */,
+				8FCC77752AA0CA1000FB515A /* WelcomeView.swift */,
+
 				7B8B2CE62AA091BF0085EF28 /* MenuView.swift */,
 				7B8B2CEA2AA0C7BE0085EF28 /* AccountSettingsView.swift */,
 				7B8B2CEC2AA0D0F20085EF28 /* ProfilView.swift */,
+
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -297,12 +309,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FCC77742AA0C21C00FB515A /* LogInView.swift in Sources */,
 				7B9B79852A9CE23900D9D4C1 /* ContentView.swift in Sources */,
 				7B8B2CE72AA091BF0085EF28 /* MenuView.swift in Sources */,
 				7B8B2CED2AA0D0F20085EF28 /* ProfilView.swift in Sources */,
 				8FCC776C2AA07E9200FB515A /* Users.swift in Sources */,
 				7B9B79832A9CE23900D9D4C1 /* meet_health_pulseApp.swift in Sources */,
+
+				8FCC77762AA0CA1000FB515A /* WelcomeView.swift in Sources */,
+				8FCC77722AA0843D00FB515A /* CreateAccountView.swift in Sources */,
+
 				7B8B2CEB2AA0C7BE0085EF28 /* AccountSettingsView.swift in Sources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
