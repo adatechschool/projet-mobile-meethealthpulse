@@ -40,7 +40,7 @@ struct WelcomeView: View {
                     signIn.toggle()
                     
                 }, label: {
-                    Text("Sign In")
+                    Text("Sign On")
                         .fontWeight(.bold)
                         .frame(width: 150,
                                height: 50,
