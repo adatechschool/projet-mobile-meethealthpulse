@@ -7,20 +7,26 @@
 
 import SwiftUI
 
-class FormViewModel: ObservableObject{
+/*class FormViewModel: ObservableObject{
     @State var username = ""
     @State var dateOfBirth = ""
     @State var email = ""
     @State var password = ""
     @State var passwordAgain = ""
     
-}
+}*/
 
 struct CreateAccountView: View {
     
-    @StateObject var viewModel = FormViewModel()
+    //@StateObject var viewModel = FormViewModel()
     @State private var logIn = false
     @State private var signOn = false
+    
+    @State var username = ""
+    @State var dateOfBirth = ""
+    @State var email = ""
+    @State var password = ""
+    @State var passwordAgain = ""
     
     var body: some View {
         NavigationView {
@@ -46,26 +52,34 @@ struct CreateAccountView: View {
                 Form {
                     
                     Section(header: Text("Username")){
-                        TextField("Username", text: $viewModel.username)
+                        TextField("Username", text: //$viewModel.username
+                            $username)
                     }
+                    
                     
                     Section(header: Text("Date of birth")) {
-                        TextField("DD / MM / YYYY", text: $viewModel.dateOfBirth)
+                        TextField("DD / MM / YYYY", text: //$viewModel.dateOfBirth
+                            $dateOfBirth)
                     }
+                 
                     
                     Section(header: Text("Email")) {
-                        TextField("email@example", text: $viewModel.email)
+                        TextField("email@example", text: //$viewModel.email
+                            $email)
                     }
                     
                     Section(
                         header: Text("Password"),
                         footer: Text("Your password must be at least 8 characters long.")) {
                             
-                            SecureField("Password", text: $viewModel.password)
+                            SecureField("Password", text: //$viewModel.password
+                                $password)
                             
-                            SecureField("Confirm password", text: $viewModel.passwordAgain)
+                            SecureField("Confirm password", text: //$viewModel.passwordAgain
+                                $passwordAgain)
                     }
                 }
+                .textInputAutocapitalization(.never)
                 
                 Button(action: {
                     // Send to Database
