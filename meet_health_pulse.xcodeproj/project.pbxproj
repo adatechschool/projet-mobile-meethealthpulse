@@ -17,11 +17,15 @@
 		7B9B79942A9CE23B00D9D4C1 /* meet_health_pulseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B79932A9CE23B00D9D4C1 /* meet_health_pulseTests.swift */; };
 		7B9B799E2A9CE23B00D9D4C1 /* meet_health_pulseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B799D2A9CE23B00D9D4C1 /* meet_health_pulseUITests.swift */; };
 		7B9B79A02A9CE23B00D9D4C1 /* meet_health_pulseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B799F2A9CE23B00D9D4C1 /* meet_health_pulseUITestsLaunchTests.swift */; };
+<<<<<<< HEAD
 		8FCC776C2AA07E9200FB515A /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCC776B2AA07E9200FB515A /* Users.swift */; };
 		8FCC77702AA0803000FB515A /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 8FCC776F2AA0803000FB515A /* users.json */; };
 		8FCC77722AA0843D00FB515A /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCC77712AA0843D00FB515A /* CreateAccountView.swift */; };
 		8FCC77742AA0C21C00FB515A /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCC77732AA0C21C00FB515A /* LogInView.swift */; };
 		8FCC77762AA0CA1000FB515A /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCC77752AA0CA1000FB515A /* WelcomeView.swift */; };
+=======
+		B8F8FE0D2AA6112D00805D47 /* FindFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F8FE0C2AA6112D00805D47 /* FindFriends.swift */; };
+>>>>>>> cfcaefc (View Friendfinder)
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,11 +59,15 @@
 		7B9B79992A9CE23B00D9D4C1 /* meet_health_pulseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = meet_health_pulseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9B799D2A9CE23B00D9D4C1 /* meet_health_pulseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meet_health_pulseUITests.swift; sourceTree = "<group>"; };
 		7B9B799F2A9CE23B00D9D4C1 /* meet_health_pulseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meet_health_pulseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		8FCC776B2AA07E9200FB515A /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		8FCC776F2AA0803000FB515A /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
 		8FCC77712AA0843D00FB515A /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		8FCC77732AA0C21C00FB515A /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		8FCC77752AA0CA1000FB515A /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+=======
+		B8F8FE0C2AA6112D00805D47 /* FindFriends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFriends.swift; sourceTree = "<group>"; };
+>>>>>>> cfcaefc (View Friendfinder)
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +121,7 @@
 		7B9B79812A9CE23900D9D4C1 /* meet_health_pulse */ = {
 			isa = PBXGroup;
 			children = (
+				B8F8FE0B2AA610FD00805D47 /* Views */,
 				7B9B79822A9CE23900D9D4C1 /* meet_health_pulseApp.swift */,
 				7B9B79862A9CE23B00D9D4C1 /* Assets.xcassets */,
 				7B9B79882A9CE23B00D9D4C1 /* Preview Content */,
@@ -145,6 +154,7 @@
 			path = meet_health_pulseUITests;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		8FCC77682AA07CD200FB515A /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,10 +165,17 @@
 				7B8B2CE62AA091BF0085EF28 /* MenuView.swift */,
 				7B8B2CEA2AA0C7BE0085EF28 /* AccountSettingsView.swift */,
 				7B8B2CEC2AA0D0F20085EF28 /* ProfilView.swift */,
+=======
+		B8F8FE0B2AA610FD00805D47 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B8F8FE0C2AA6112D00805D47 /* FindFriends.swift */,
+>>>>>>> cfcaefc (View Friendfinder)
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		8FCC77692AA07CFA00FB515A /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +192,8 @@
 			path = Ressources;
 			sourceTree = "<group>";
 		};
+=======
+>>>>>>> cfcaefc (View Friendfinder)
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -306,7 +325,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				8FCC77742AA0C21C00FB515A /* LogInView.swift in Sources */,
+=======
+				B8F8FE0D2AA6112D00805D47 /* FindFriends.swift in Sources */,
+>>>>>>> cfcaefc (View Friendfinder)
 				7B9B79852A9CE23900D9D4C1 /* ContentView.swift in Sources */,
 				7B8B2CE72AA091BF0085EF28 /* MenuView.swift in Sources */,
 				7B8B2CED2AA0D0F20085EF28 /* ProfilView.swift in Sources */,
