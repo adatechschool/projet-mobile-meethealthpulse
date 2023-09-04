@@ -14,6 +14,7 @@
 		7B9B79942A9CE23B00D9D4C1 /* meet_health_pulseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B79932A9CE23B00D9D4C1 /* meet_health_pulseTests.swift */; };
 		7B9B799E2A9CE23B00D9D4C1 /* meet_health_pulseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B799D2A9CE23B00D9D4C1 /* meet_health_pulseUITests.swift */; };
 		7B9B79A02A9CE23B00D9D4C1 /* meet_health_pulseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B799F2A9CE23B00D9D4C1 /* meet_health_pulseUITestsLaunchTests.swift */; };
+		B8F8FE0D2AA6112D00805D47 /* FindFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F8FE0C2AA6112D00805D47 /* FindFriends.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		7B9B79992A9CE23B00D9D4C1 /* meet_health_pulseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = meet_health_pulseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9B799D2A9CE23B00D9D4C1 /* meet_health_pulseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meet_health_pulseUITests.swift; sourceTree = "<group>"; };
 		7B9B799F2A9CE23B00D9D4C1 /* meet_health_pulseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meet_health_pulseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B8F8FE0C2AA6112D00805D47 /* FindFriends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFriends.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		7B9B79812A9CE23900D9D4C1 /* meet_health_pulse */ = {
 			isa = PBXGroup;
 			children = (
+				B8F8FE0B2AA610FD00805D47 /* Views */,
 				7B9B79822A9CE23900D9D4C1 /* meet_health_pulseApp.swift */,
 				7B9B79842A9CE23900D9D4C1 /* ContentView.swift */,
 				7B9B79862A9CE23B00D9D4C1 /* Assets.xcassets */,
@@ -125,6 +128,14 @@
 				7B9B799F2A9CE23B00D9D4C1 /* meet_health_pulseUITestsLaunchTests.swift */,
 			);
 			path = meet_health_pulseUITests;
+			sourceTree = "<group>";
+		};
+		B8F8FE0B2AA610FD00805D47 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B8F8FE0C2AA6112D00805D47 /* FindFriends.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8F8FE0D2AA6112D00805D47 /* FindFriends.swift in Sources */,
 				7B9B79852A9CE23900D9D4C1 /* ContentView.swift in Sources */,
 				7B9B79832A9CE23900D9D4C1 /* meet_health_pulseApp.swift in Sources */,
 			);
