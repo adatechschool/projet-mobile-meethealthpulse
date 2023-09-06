@@ -58,7 +58,7 @@ struct MenuView: View {
                         }
                         
                         // Lien vers "Find Friends"
-                        NavigationLink(destination: Text("Find Friends")) {
+                        NavigationLink(destination: FindFriendsView()) {
                             HStack {
                                 
                                 // Ajout de l'icon "person.badge.plus"

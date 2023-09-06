@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FindFriends: View {
+struct FindFriendsView: View {
     @State private var activity = ""
     @State private var location = ""
     @State private var minDistance = ""
@@ -52,7 +52,7 @@ struct FindFriends: View {
     
     struct FindFriends_Previews: PreviewProvider {
         static var previews: some View {
-            FindFriends()
+            FindFriendsView()
         }
     }
 }
