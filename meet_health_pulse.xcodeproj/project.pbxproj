@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B7807732AA8C1C8006655AB /* FindFriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7807722AA8C1C8006655AB /* FindFriendsView.swift */; };
+		7B7807762AA8C87F006655AB /* FindFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7807752AA8C87F006655AB /* FindFriends.swift */; };
 		7B8B2CE72AA091BF0085EF28 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8B2CE62AA091BF0085EF28 /* MenuView.swift */; };
 		7B8B2CEB2AA0C7BE0085EF28 /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8B2CEA2AA0C7BE0085EF28 /* AccountSettingsView.swift */; };
 		7B8B2CED2AA0D0F20085EF28 /* ProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8B2CEC2AA0D0F20085EF28 /* ProfilView.swift */; };
@@ -18,7 +18,6 @@
 		7B9B79942A9CE23B00D9D4C1 /* meet_health_pulseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B79932A9CE23B00D9D4C1 /* meet_health_pulseTests.swift */; };
 		7B9B799E2A9CE23B00D9D4C1 /* meet_health_pulseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B799D2A9CE23B00D9D4C1 /* meet_health_pulseUITests.swift */; };
 		7B9B79A02A9CE23B00D9D4C1 /* meet_health_pulseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B799F2A9CE23B00D9D4C1 /* meet_health_pulseUITestsLaunchTests.swift */; };
-
 		8FCC776C2AA07E9200FB515A /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCC776B2AA07E9200FB515A /* Users.swift */; };
 		8FCC77702AA0803000FB515A /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 8FCC776F2AA0803000FB515A /* users.json */; };
 		8FCC77722AA0843D00FB515A /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCC77712AA0843D00FB515A /* CreateAccountView.swift */; };
@@ -45,7 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7B7807722AA8C1C8006655AB /* FindFriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFriendsView.swift; sourceTree = "<group>"; };
+		7B7807752AA8C87F006655AB /* FindFriends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFriends.swift; sourceTree = "<group>"; };
 		7B8B2CE62AA091BF0085EF28 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		7B8B2CEA2AA0C7BE0085EF28 /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
 		7B8B2CEC2AA0D0F20085EF28 /* ProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilView.swift; sourceTree = "<group>"; };
@@ -59,7 +58,6 @@
 		7B9B79992A9CE23B00D9D4C1 /* meet_health_pulseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = meet_health_pulseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9B799D2A9CE23B00D9D4C1 /* meet_health_pulseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meet_health_pulseUITests.swift; sourceTree = "<group>"; };
 		7B9B799F2A9CE23B00D9D4C1 /* meet_health_pulseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meet_health_pulseUITestsLaunchTests.swift; sourceTree = "<group>"; };
-
 		8FCC776B2AA07E9200FB515A /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		8FCC776F2AA0803000FB515A /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
 		8FCC77712AA0843D00FB515A /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
@@ -93,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B7807742AA8C4AA006655AB /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				B8F8FE0C2AA6112D00805D47 /* FindFriends.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		7B9B79762A9CE23900D9D4C1 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +109,7 @@
 				7B9B79922A9CE23B00D9D4C1 /* meet_health_pulseTests */,
 				7B9B799C2A9CE23B00D9D4C1 /* meet_health_pulseUITests */,
 				7B9B79802A9CE23900D9D4C1 /* Products */,
+				7B7807742AA8C4AA006655AB /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,7 +126,6 @@
 		7B9B79812A9CE23900D9D4C1 /* meet_health_pulse */ = {
 			isa = PBXGroup;
 			children = (
-				B8F8FE0B2AA610FD00805D47 /* Views */,
 				7B9B79822A9CE23900D9D4C1 /* meet_health_pulseApp.swift */,
 				7B9B79862A9CE23B00D9D4C1 /* Assets.xcassets */,
 				7B9B79882A9CE23B00D9D4C1 /* Preview Content */,
@@ -152,7 +158,6 @@
 			path = meet_health_pulseUITests;
 			sourceTree = "<group>";
 		};
-
 		8FCC77682AA07CD200FB515A /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,12 +168,11 @@
 				7B8B2CE62AA091BF0085EF28 /* MenuView.swift */,
 				7B8B2CEA2AA0C7BE0085EF28 /* AccountSettingsView.swift */,
 				7B8B2CEC2AA0D0F20085EF28 /* ProfilView.swift */,
-				7B7807722AA8C1C8006655AB /* FindFriendsView.swift */,
+				7B7807752AA8C87F006655AB /* FindFriends.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-
 		8FCC77692AA07CFA00FB515A /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,8 +189,6 @@
 			path = Ressources;
 			sourceTree = "<group>";
 		};
-
-cfcaefc (View Friendfinder)
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -323,7 +325,6 @@ cfcaefc (View Friendfinder)
 				B8F8FE0D2AA6112D00805D47 /* FindFriends.swift in Sources */,
 				7B9B79852A9CE23900D9D4C1 /* ContentView.swift in Sources */,
 				7B8B2CE72AA091BF0085EF28 /* MenuView.swift in Sources */,
-				7B7807732AA8C1C8006655AB /* FindFriendsView.swift in Sources */,
 				7B8B2CED2AA0D0F20085EF28 /* ProfilView.swift in Sources */,
 				8FCC776C2AA07E9200FB515A /* Users.swift in Sources */,
 				7B9B79832A9CE23900D9D4C1 /* meet_health_pulseApp.swift in Sources */,
