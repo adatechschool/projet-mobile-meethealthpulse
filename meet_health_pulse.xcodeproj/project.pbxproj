@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B7807732AA8C1C8006655AB /* FindFriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7807722AA8C1C8006655AB /* FindFriendsView.swift */; };
 		7B8B2CE72AA091BF0085EF28 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8B2CE62AA091BF0085EF28 /* MenuView.swift */; };
 		7B8B2CEB2AA0C7BE0085EF28 /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8B2CEA2AA0C7BE0085EF28 /* AccountSettingsView.swift */; };
 		7B8B2CED2AA0D0F20085EF28 /* ProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8B2CEC2AA0D0F20085EF28 /* ProfilView.swift */; };
@@ -46,6 +47,7 @@ cfcaefc (View Friendfinder)
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B7807722AA8C1C8006655AB /* FindFriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFriendsView.swift; sourceTree = "<group>"; };
 		7B8B2CE62AA091BF0085EF28 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		7B8B2CEA2AA0C7BE0085EF28 /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
 		7B8B2CEC2AA0D0F20085EF28 /* ProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilView.swift; sourceTree = "<group>"; };
@@ -165,12 +167,7 @@ cfcaefc (View Friendfinder)
 				7B8B2CE62AA091BF0085EF28 /* MenuView.swift */,
 				7B8B2CEA2AA0C7BE0085EF28 /* AccountSettingsView.swift */,
 				7B8B2CEC2AA0D0F20085EF28 /* ProfilView.swift */,
-
-		B8F8FE0B2AA610FD00805D47 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				B8F8FE0C2AA6112D00805D47 /* FindFriends.swift */,
-cfcaefc (View Friendfinder)
+				7B7807722AA8C1C8006655AB /* FindFriendsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -332,6 +329,7 @@ cfcaefc (View Friendfinder)
 cfcaefc (View Friendfinder)
 				7B9B79852A9CE23900D9D4C1 /* ContentView.swift in Sources */,
 				7B8B2CE72AA091BF0085EF28 /* MenuView.swift in Sources */,
+				7B7807732AA8C1C8006655AB /* FindFriendsView.swift in Sources */,
 				7B8B2CED2AA0D0F20085EF28 /* ProfilView.swift in Sources */,
 				8FCC776C2AA07E9200FB515A /* Users.swift in Sources */,
 				7B9B79832A9CE23900D9D4C1 /* meet_health_pulseApp.swift in Sources */,
