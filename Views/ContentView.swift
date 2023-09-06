@@ -9,26 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     
-    
-    
     var body: some View {
-<<<<<<< HEAD:Views/ContentView.swift
+
        WelcomeView()
     }
 }
-
+    
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-=======
         
-        Text("Hello MHP")
     }
     
-    struct ContentView_Previews: PreviewProvider {
-        static var previews: some View {
-            ContentView()
-        }
->>>>>>> ae84a94 (Fixed link):meet_health_pulse/ContentView.swift
-    }
 }
