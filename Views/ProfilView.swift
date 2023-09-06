@@ -43,10 +43,10 @@ struct ProfilView: View {
                         .frame(width: 300, height: 300)
                     
                     // Ajout de l'icon du Sport ou activité préféré(e)
-                    Image(systemName: "figure.open.water.swim")
-                        .foregroundColor(Color.black)
-                        .padding(.leading)
-                        .imageScale(.large)
+                    //Image(systemName: "figure.open.water.swim")
+                        //.foregroundColor(Color.black)
+                        //.padding(.leading)
+                        //.imageScale(.large)
                     
                     // Ajout du Welcome (+ Pseudo du profil)
                     Text("Welcome 🥳")
