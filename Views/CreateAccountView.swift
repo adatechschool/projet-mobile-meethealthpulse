@@ -22,11 +22,20 @@ struct CreateAccountView: View {
     @State private var logIn = false
     @State private var signOn = false
     
+    @State var selectedDate: Date? = nil
+    @State private var presented = false
+    
     @State var username = ""
     @State var dateOfBirth = ""
     @State var email = ""
     @State var password = ""
     @State var passwordAgain = ""
+    
+    var dateFormatter: DateFormatter {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .long
+            return formatter
+        }
     
     var body: some View {
         NavigationView {
@@ -58,14 +67,13 @@ struct CreateAccountView: View {
                     
                     
                     Section(header: Text("Date of birth")) {
-                        TextField("DD / MM / YYYY", text: //$viewModel.dateOfBirth
-                            $dateOfBirth)
+                        DateField(placeholder: "Choose your birthday", presented: $presented, date: $selectedDate, value: $dateOfBirth)
+                            
                     }
                  
                     
                     Section(header: Text("Email")) {
-                        TextField("email@example", text: //$viewModel.email
-                            $email)
+                        EmailView()
                     }
                     
                     Section(
@@ -80,6 +88,7 @@ struct CreateAccountView: View {
                     }
                 }
                 .textInputAutocapitalization(.never)
+                //.calendarSheet(presented: $presented, value: $dateOfBirth)
                 
                 Button(action: {
                     // Send to Database
@@ -95,6 +104,7 @@ struct CreateAccountView: View {
                 })
                 .padding()
                 
+                
             }
         }
         .fullScreenCover(isPresented: $logIn) {
@@ -103,7 +113,7 @@ struct CreateAccountView: View {
         .fullScreenCover(isPresented: $signOn) {
             ProfilView()
         }
-        
+        .calendarSheet(presented: $presented, value: $dateOfBirth)
     }
 }
 

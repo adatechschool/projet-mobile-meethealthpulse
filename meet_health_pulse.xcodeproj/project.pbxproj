@@ -18,12 +18,16 @@
 		7B9B79942A9CE23B00D9D4C1 /* meet_health_pulseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B79932A9CE23B00D9D4C1 /* meet_health_pulseTests.swift */; };
 		7B9B799E2A9CE23B00D9D4C1 /* meet_health_pulseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B799D2A9CE23B00D9D4C1 /* meet_health_pulseUITests.swift */; };
 		7B9B79A02A9CE23B00D9D4C1 /* meet_health_pulseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B799F2A9CE23B00D9D4C1 /* meet_health_pulseUITestsLaunchTests.swift */; };
+		8F399BE92AAA020900A99741 /* DateField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F399BE82AAA020900A99741 /* DateField.swift */; };
+		8F399BEB2AAA022800A99741 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F399BEA2AAA022800A99741 /* Globals.swift */; };
+		8F399BED2AAA026400A99741 /* CalendarSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F399BEC2AAA026400A99741 /* CalendarSheet.swift */; };
+		8F399BEF2AAA08A700A99741 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F399BEE2AAA08A700A99741 /* EmailView.swift */; };
+		8F399BF22AAA0EF800A99741 /* ActivityPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F399BF12AAA0EF800A99741 /* ActivityPicker.swift */; };
 		8FCC776C2AA07E9200FB515A /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCC776B2AA07E9200FB515A /* Users.swift */; };
 		8FCC77702AA0803000FB515A /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 8FCC776F2AA0803000FB515A /* users.json */; };
 		8FCC77722AA0843D00FB515A /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCC77712AA0843D00FB515A /* CreateAccountView.swift */; };
 		8FCC77742AA0C21C00FB515A /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCC77732AA0C21C00FB515A /* LogInView.swift */; };
 		8FCC77762AA0CA1000FB515A /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCC77752AA0CA1000FB515A /* WelcomeView.swift */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,12 +62,16 @@
 		7B9B79992A9CE23B00D9D4C1 /* meet_health_pulseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = meet_health_pulseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9B799D2A9CE23B00D9D4C1 /* meet_health_pulseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meet_health_pulseUITests.swift; sourceTree = "<group>"; };
 		7B9B799F2A9CE23B00D9D4C1 /* meet_health_pulseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meet_health_pulseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8F399BE82AAA020900A99741 /* DateField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateField.swift; sourceTree = "<group>"; };
+		8F399BEA2AAA022800A99741 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		8F399BEC2AAA026400A99741 /* CalendarSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarSheet.swift; sourceTree = "<group>"; };
+		8F399BEE2AAA08A700A99741 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
+		8F399BF12AAA0EF800A99741 /* ActivityPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityPicker.swift; sourceTree = "<group>"; };
 		8FCC776B2AA07E9200FB515A /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		8FCC776F2AA0803000FB515A /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
 		8FCC77712AA0843D00FB515A /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		8FCC77732AA0C21C00FB515A /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		8FCC77752AA0CA1000FB515A /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,18 +99,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		
 		7B9B79762A9CE23900D9D4C1 = {
 			isa = PBXGroup;
 			children = (
 				7B9B79812A9CE23900D9D4C1 /* meet_health_pulse */,
 				8FCC77682AA07CD200FB515A /* Views */,
 				8FCC77692AA07CFA00FB515A /* Model */,
+				8F399BF02AAA0D1700A99741 /* ViewModel */,
 				8FCC776A2AA07D0100FB515A /* Ressources */,
 				7B9B79922A9CE23B00D9D4C1 /* meet_health_pulseTests */,
 				7B9B799C2A9CE23B00D9D4C1 /* meet_health_pulseUITests */,
 				7B9B79802A9CE23900D9D4C1 /* Products */,
-				7B7807742AA8C4AA006655AB /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,6 +158,15 @@
 			path = meet_health_pulseUITests;
 			sourceTree = "<group>";
 		};
+		8F399BF02AAA0D1700A99741 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8F399BEE2AAA08A700A99741 /* EmailView.swift */,
+				8F399BF12AAA0EF800A99741 /* ActivityPicker.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		8FCC77682AA07CD200FB515A /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +185,9 @@
 		8FCC77692AA07CFA00FB515A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8F399BEC2AAA026400A99741 /* CalendarSheet.swift */,
+				8F399BEA2AAA022800A99741 /* Globals.swift */,
+				8F399BE82AAA020900A99741 /* DateField.swift */,
 				8FCC776B2AA07E9200FB515A /* Users.swift */,
 			);
 			path = Model;
@@ -313,17 +332,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F399BE92AAA020900A99741 /* DateField.swift in Sources */,
 				7B7807762AA8C87F006655AB /* FindFriendsView.swift in Sources */,
 				8FCC77742AA0C21C00FB515A /* LogInView.swift in Sources */,
-				
 				7B9B79852A9CE23900D9D4C1 /* ContentView.swift in Sources */,
 				7B8B2CE72AA091BF0085EF28 /* MenuView.swift in Sources */,
+				8F399BEB2AAA022800A99741 /* Globals.swift in Sources */,
+				8F399BED2AAA026400A99741 /* CalendarSheet.swift in Sources */,
 				7B8B2CED2AA0D0F20085EF28 /* ProfilView.swift in Sources */,
 				8FCC776C2AA07E9200FB515A /* Users.swift in Sources */,
 				7B9B79832A9CE23900D9D4C1 /* meet_health_pulseApp.swift in Sources */,
 				8FCC77762AA0CA1000FB515A /* WelcomeView.swift in Sources */,
 				8FCC77722AA0843D00FB515A /* CreateAccountView.swift in Sources */,
 				7B8B2CEB2AA0C7BE0085EF28 /* AccountSettingsView.swift in Sources */,
+				8F399BF22AAA0EF800A99741 /* ActivityPicker.swift in Sources */,
+				8F399BEF2AAA08A700A99741 /* EmailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
