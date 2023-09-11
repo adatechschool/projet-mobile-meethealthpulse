@@ -23,6 +23,7 @@
 		8F399BED2AAA026400A99741 /* CalendarSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F399BEC2AAA026400A99741 /* CalendarSheet.swift */; };
 		8F399BEF2AAA08A700A99741 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F399BEE2AAA08A700A99741 /* EmailView.swift */; };
 		8F399BF22AAA0EF800A99741 /* ActivityPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F399BF12AAA0EF800A99741 /* ActivityPicker.swift */; };
+		8F598AF52AAF40000004BF16 /* ActivityField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F598AF42AAF40000004BF16 /* ActivityField.swift */; };
 		8FCC776C2AA07E9200FB515A /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCC776B2AA07E9200FB515A /* Users.swift */; };
 		8FCC77702AA0803000FB515A /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 8FCC776F2AA0803000FB515A /* users.json */; };
 		8FCC77722AA0843D00FB515A /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCC77712AA0843D00FB515A /* CreateAccountView.swift */; };
@@ -67,6 +68,7 @@
 		8F399BEC2AAA026400A99741 /* CalendarSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarSheet.swift; sourceTree = "<group>"; };
 		8F399BEE2AAA08A700A99741 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		8F399BF12AAA0EF800A99741 /* ActivityPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityPicker.swift; sourceTree = "<group>"; };
+		8F598AF42AAF40000004BF16 /* ActivityField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityField.swift; sourceTree = "<group>"; };
 		8FCC776B2AA07E9200FB515A /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		8FCC776F2AA0803000FB515A /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
 		8FCC77712AA0843D00FB515A /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 		8F399BF02AAA0D1700A99741 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				8F399BEC2AAA026400A99741 /* CalendarSheet.swift */,
 				8F399BEE2AAA08A700A99741 /* EmailView.swift */,
 				8F399BF12AAA0EF800A99741 /* ActivityPicker.swift */,
 			);
@@ -185,9 +188,9 @@
 		8FCC77692AA07CFA00FB515A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8F399BEC2AAA026400A99741 /* CalendarSheet.swift */,
 				8F399BEA2AAA022800A99741 /* Globals.swift */,
 				8F399BE82AAA020900A99741 /* DateField.swift */,
+				8F598AF42AAF40000004BF16 /* ActivityField.swift */,
 				8FCC776B2AA07E9200FB515A /* Users.swift */,
 			);
 			path = Model;
@@ -347,6 +350,7 @@
 				7B8B2CEB2AA0C7BE0085EF28 /* AccountSettingsView.swift in Sources */,
 				8F399BF22AAA0EF800A99741 /* ActivityPicker.swift in Sources */,
 				8F399BEF2AAA08A700A99741 /* EmailView.swift in Sources */,
+				8F598AF52AAF40000004BF16 /* ActivityField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

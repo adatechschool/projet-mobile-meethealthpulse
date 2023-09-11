@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct FindFriendsView: View {
+    
+    @State var selectedActivity: String? = nil
+    @State private var presented = false
+    
     @State private var activity = ""
     @State private var location = ""
     @State private var minDistance = ""
@@ -20,7 +24,8 @@ struct FindFriendsView: View {
         
             Form {
                 Section (header: Text ("Filtres de recherches")) {
-                    TextField("Activité", text: $activity)
+                    //TextField("Activité", text: $activity)
+                    ActivityField(placeholder: "Choose an activity", presented: $presented, activity: $selectedActivity, value: $activity)
                     TextField("Location", text: $location)
                     
                     HStack {
@@ -46,6 +51,7 @@ struct FindFriendsView: View {
                 Button("Rechercher"){
                 }
             }
+            .activityPicker(presented: $presented, value: $activity)
         }
         
     
