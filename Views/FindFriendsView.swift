@@ -21,7 +21,8 @@ struct FindFriendsView: View {
     
     var body: some View {
         
-       NavigationView {
+        NavigationView {
+        //NavigationStack {
             Form {
                     Section(header: Text("Activity")) {
                         ActivityFieldView(presented: $presented, activity: $selectedActivity, value: $activity)
@@ -52,10 +53,10 @@ struct FindFriendsView: View {
                     Button("Rechercher"){
                     }
                 }
-            //.activityPicker(presented: $presented, value: $activity)
-            
             .navigationTitle("Find Friends")
+            .navigationBarBackButtonHidden(true)
             .navigationBarTitleDisplayMode(.inline)
+            
         }
        
         

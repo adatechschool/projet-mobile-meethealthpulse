@@ -12,14 +12,18 @@ struct ActivityPickerView: View {
     @Binding var activity: String?
     @Binding var value: String
     
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         NavigationView {
+        //NavigationStack {
             List {
                 ForEach(activities, id: \.self) { activityOption in
                     Button(action: {
                         activity = activityOption.name
                         value = activityOption.name
                         presented = false
+                        presentationMode.wrappedValue.dismiss()
                     }) {
                         ActivityRow(activity: activityOption)
                         
@@ -27,10 +31,10 @@ struct ActivityPickerView: View {
                 }
             }
             .navigationBarTitle("Choose an activity", displayMode: .inline)
-            .navigationBarItems(trailing: Button(action: { presented = false }) {
-                Text("Done").bold()
-            })
+            .navigationBarBackButtonHidden(true)
+            //.navigationBarHidden(false)
         }
+        
     }
 }
 

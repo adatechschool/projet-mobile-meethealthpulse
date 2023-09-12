@@ -9,7 +9,8 @@ import SwiftUI
 
 struct MenuView: View {
     var body: some View {
-        NavigationView {
+        //NavigationView {
+        NavigationStack {
             ZStack {
                 VStack {
                     
@@ -93,7 +94,7 @@ struct MenuView: View {
             .navigationBarTitleDisplayMode(.inline)
             
             // Pour cacher le bouton de retour par défaut
-            .navigationBarBackButtonHidden(true)
+            //.navigationBarBackButtonHidden(true)
         }
     }
 }

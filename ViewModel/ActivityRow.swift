@@ -19,6 +19,8 @@ struct ActivityRow: View {
             
             Spacer()
         }
+        .foregroundColor(Color.black)
+        
     }
 }
 
