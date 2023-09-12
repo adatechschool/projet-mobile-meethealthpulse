@@ -14,7 +14,6 @@ struct FindFriendsView: View {
     
     @State private var activity = ""
     @State private var location = ""
-    @State private var minDistance = ""
     @State private var maxDistance = ""
     @State private var minAge = ""
     @State private var maxAge = ""
@@ -22,36 +21,44 @@ struct FindFriendsView: View {
     
     var body: some View {
         
+       NavigationView {
             Form {
-                Section (header: Text ("Filtres de recherches")) {
-                    //TextField("Activité", text: $activity)
-                    ActivityField(placeholder: "Choose an activity", presented: $presented, activity: $selectedActivity, value: $activity)
-                    TextField("Location", text: $location)
+                    Section(header: Text("Activity")) {
+                        ActivityFieldView(presented: $presented, activity: $selectedActivity, value: $activity)
+                    }
+                    Section (header: Text ("Filtres de recherches")) {
+                        //TextField("Activité", text: $activity)
+                       
+                        /*ActivityField(placeholder: "Choose an activity", presented: $presented, activity: $selectedActivity, value: $activity)*/
+                        
+                        TextField("Location", text: $location)
+                        
+                        HStack {
+                            TextField("Distance maximale (km)", text: $maxDistance)
+                            
+                        }
+                    }
                     
-                    HStack {
-                        TextField("Distance minimale (km)", text: $minDistance)
-                        
+                    Section(header: Text("Filtres d'âge")) {
+                        HStack {
+                            TextField("Age minimum", text: $minAge)
+                            Text("ans")
+                        }
+                        HStack {
+                            TextField("Age maximum", text: $maxAge)
+                            Text("ans")
+                        }
                     }
-                    HStack {
-                        TextField("Distance maximale (km)", text: $maxDistance)
-                        
-                    }
-                }
-                
-                Section(header: Text("Filtres d'âge")) {
-                    HStack {
-                        TextField("Age minimum", text: $minAge)
-                        Text("ans")
-                    }
-                    HStack {
-                        TextField("Age maximum", text: $maxAge)
-                        Text("ans")
+                    Button("Rechercher"){
                     }
                 }
-                Button("Rechercher"){
-                }
-            }
-            .activityPicker(presented: $presented, value: $activity)
+            //.activityPicker(presented: $presented, value: $activity)
+            
+            .navigationTitle("Find Friends")
+            .navigationBarTitleDisplayMode(.inline)
+        }
+       
+        
         }
         
     
