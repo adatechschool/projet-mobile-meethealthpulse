@@ -20,7 +20,7 @@ struct CreateAccountView: View {
     
     //@StateObject var viewModel = FormViewModel()
     @State private var logIn = false
-    @State private var signOn = false
+    @State private var signUp = false
     
     @State var selectedDate: Date? = nil
     @State private var presented = false
@@ -92,9 +92,9 @@ struct CreateAccountView: View {
                 
                 Button(action: {
                     // Send to Database
-                    signOn.toggle()
+                    signUp.toggle()
                 }, label: {
-                    Text("Sign On")
+                    Text("Sign Up")
                         .frame(width: 150,
                                height: 50,
                                alignment: .center)
@@ -110,7 +110,7 @@ struct CreateAccountView: View {
         .fullScreenCover(isPresented: $logIn) {
             LogInView()
         }
-        .fullScreenCover(isPresented: $signOn) {
+        .fullScreenCover(isPresented: $signUp) {
             ProfilView()
         }
         .calendarSheet(presented: $presented, value: $dateOfBirth)
