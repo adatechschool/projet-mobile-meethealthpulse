@@ -4,14 +4,18 @@
 package database
 
 import (
-	"context"
-	"crypto/tls"
 	"fmt"
+	"log"
+
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	"log"
+
+	"context"
+	"crypto/tls"
+
 	"projet-mobile-backend-go/config"
+	"projet-mobile-backend-go/models"
 )
 
 var Client *mongo.Client
@@ -38,14 +42,21 @@ func Init() {
 		log.Fatalf("An error occurred: %v", err)
 	}
 
-	defer func() {
-		if disconnectErr := Client.Disconnect(context.TODO()); disconnectErr != nil {
-			log.Fatalf("Error disconnecting from database: %v", disconnectErr)
-		}
-	}()
-
 	// Envoyer un ping afin de confirmer si la connexion est bien établie
 	if err := Client.Database("admin").RunCommand(context.TODO(), bson.D{{"ping", 1}}).Err(); err != nil {
 		panic(err)
 	}
+}
+
+// FindUserByEmail : recherche un utilisateur dans la base de données MongoDB en fonction de son email
+func FindUserByEmail(email string) (*models.User, error) {
+	var user models.User
+	collection := Client.Database("myAppMHP").Collection("users")
+	err := collection.FindOne(context.TODO(), bson.M{"email": email}).Decode(&user)
+	if err != nil {
+		log.Println("Error fetching user:", err)
+		return nil, err
+	}
+
+	return &user, nil
 }

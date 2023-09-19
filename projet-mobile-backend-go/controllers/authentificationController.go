@@ -2,6 +2,9 @@
 package controllers
 
 import (
+	"context"
+	"os"
+
 	"github.com/dgrijalva/jwt-go"
 	"golang.org/x/crypto/bcrypt"
 	"net/http"
@@ -10,9 +13,10 @@ import (
 	// Importer le package models qui définit la structure des utilisateurs
 	"projet-mobile-backend-go/models"
 
-	"projet-mobile-backend-go/database" // importer le package de base de données
+	// Importer le package de base de données
+	"projet-mobile-backend-go/database"
 
-	// Importer le package gin, un cadre très populaire pour écrire des applications en Go
+	// Importer le package gin qui est un cadre pour écrire des applications en Go
 	"github.com/gin-gonic/gin"
 )
 
@@ -37,8 +41,25 @@ func SignupHandler(c *gin.Context) {
 
 	// Ajouter la logique pour sauvegarder user dans la db.
 
+	// Quand un utilisateur s'inscrit, on doit hasher son mot de passe avant de le sauvegarder dans la BDD
+	// en utilisant bcrypt
+	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(user.Password), bcrypt.DefaultCost)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to hash password"})
+		return
+	}
+	user.Password = string(hashedPassword)
+
+	// Après avoir hashé le mot de passe, on sauvegarde l'utilisateur dans la BDD
+	collection := database.Client.Database("myAppMHP").Collection("users")
+	_, err = collection.InsertOne(context.TODO(), user)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to sign up the user"})
+		return
+	}
+
 	// Si c'est "OK" on renvoie une réponse HTTP avec un statut 200 et un message JSON que l'utilisateur est inscrit
-	c.JSON(200, gin.H{"message": "User signed up successfully"})
+	c.JSON(200, gin.H{"message": "User signed in successfully"})
 }
 
 // LoginHandler sera appelée chaque fois qu'une requête POST est effectuée sur l'URL /login.
@@ -51,6 +72,12 @@ func LoginHandler(c *gin.Context) {
 
 	// Chercher l'utilisateur dans la base de données par son email
 	foundUser, err := database.FindUserByEmail(user.Email)
+
+	if foundUser == nil {
+		c.JSON(http.StatusUnauthorized, gin.H{"error": "User not found"})
+		return
+	}
+
 	if err != nil {
 		c.JSON(http.StatusUnauthorized, gin.H{"error": "Incorrect email or password"})
 		return
@@ -63,7 +90,7 @@ func LoginHandler(c *gin.Context) {
 	}
 
 	// Générer le JWT
-	token, err := generateToken(foundUser)
+	token, err := generateToken(*foundUser)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not generate token"})
 		return
@@ -73,7 +100,7 @@ func LoginHandler(c *gin.Context) {
 }
 
 func generateToken(user models.User) (string, error) {
-	var jwtKey = []byte("secret_key") // Mettre la clé secrète dans le .env
+	var jwtKey = []byte(os.Getenv("SECRET_KEY"))
 
 	// Créez un token avec une date d'expiration
 	expirationTime := time.Now().Add(24 * time.Hour)
