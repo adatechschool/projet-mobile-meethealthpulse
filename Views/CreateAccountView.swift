@@ -22,6 +22,9 @@ struct CreateAccountView: View {
     @State private var logIn = false
     @State private var signOn = false
     
+    @State private var showAlert = false
+    @State private var alertMessage = ""
+        
     @State var username = ""
     @State var dateOfBirth = ""
     @State var email = ""
@@ -36,36 +39,36 @@ struct CreateAccountView: View {
                     .bold()
                     .padding(.bottom,5)
                 
-                    HStack {
-                        Text("Enter your account details below or")
-                        
-                        Button {
-                            logIn.toggle()
-                        } label: {
-                            Text("log in")
-                                .underline()
-                                .foregroundColor(.black)
-                                .fontWeight(.bold)
-                        }
+                HStack {
+                    Text("Enter your account details below or")
+                    
+                    Button {
+                        logIn.toggle()
+                    } label: {
+                        Text("log in")
+                            .underline()
+                            .foregroundColor(.black)
+                            .fontWeight(.bold)
                     }
+                }
                 
                 Form {
                     
                     Section(header: Text("Username")){
                         TextField("Username", text: //$viewModel.username
-                            $username)
+                                  $username)
                     }
                     
                     
                     Section(header: Text("Date of birth")) {
                         TextField("DD / MM / YYYY", text: //$viewModel.dateOfBirth
-                            $dateOfBirth)
+                                  $dateOfBirth)
                     }
-                 
+                    
                     
                     Section(header: Text("Email")) {
                         TextField("email@example", text: //$viewModel.email
-                            $email)
+                                  $email)
                     }
                     
                     Section(
@@ -73,37 +76,50 @@ struct CreateAccountView: View {
                         footer: Text("Your password must be at least 8 characters long.")) {
                             
                             SecureField("Password", text: //$viewModel.password
-                                $password)
+                                        $password)
                             
                             SecureField("Confirm password", text: //$viewModel.passwordAgain
-                                $passwordAgain)
-                    }
+                                        $passwordAgain)
+                        }
                 }
                 .textInputAutocapitalization(.never)
                 
                 Button(action: {
-                    // Send to Database
-                    signOn.toggle()
+                    if password != passwordAgain {
+                        alertMessage = "Les mots de passe ne correspondent pas."
+                        showAlert = true
+                        return
+                    }
+                    AuthentificationService.shared.signUp(username: username, dateOfBirth: dateOfBirth, email: email, password: password) { success, error in
+                        
+                        if success {
+                            print("Inscription réussie!")
+                            
+                            // On peut rediriger l'utilisateur vers ProfilView.
+                            signOn = true
+                        } else {
+                            alertMessage = error?.localizedDescription ?? "Erreur inconnue"
+                            showAlert = true
+                        }
+                    }
                 }, label: {
                     Text("Sign On")
-                        .frame(width: 150,
-                               height: 50,
-                               alignment: .center)
+                        .frame(width: 150, height: 50, alignment: .center)
                         .background(Color("Primary"))
                         .foregroundColor(.white)
                         .cornerRadius(8)
-                })
-                .padding()
-                
+                }).padding()
+                    .alert(isPresented: $showAlert) {
+                        Alert(title: Text("Erreur"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                    }
+            }
+            .fullScreenCover(isPresented: $logIn) {
+                LogInView()
+            }
+            .fullScreenCover(isPresented: $signOn) {
+                ProfilView()
             }
         }
-        .fullScreenCover(isPresented: $logIn) {
-            LogInView()
-        }
-        .fullScreenCover(isPresented: $signOn) {
-            ProfilView()
-        }
-        
     }
 }
 
