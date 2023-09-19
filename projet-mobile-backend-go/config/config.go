@@ -14,6 +14,6 @@ func LoadEnv() {
 }
 
 func GetDBCredentials() (string, string) {
-	// pour ajouter une éventuelle : apiKey := os.Getenv("API_KEY")
+	// Pour ajouter une éventuelle : apiKey := os.Getenv("API_KEY")
 	return os.Getenv("DB_USER"), os.Getenv("DB_PASS")
 }
