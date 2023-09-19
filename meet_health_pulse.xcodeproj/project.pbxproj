@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B74F11E2AB84AFD00063D08 /* AuthentificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B74F11D2AB84AFD00063D08 /* AuthentificationService.swift */; };
 		7B7807762AA8C87F006655AB /* FindFriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7807752AA8C87F006655AB /* FindFriendsView.swift */; };
 		7B8B2CE72AA091BF0085EF28 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8B2CE62AA091BF0085EF28 /* MenuView.swift */; };
 		7B8B2CEB2AA0C7BE0085EF28 /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8B2CEA2AA0C7BE0085EF28 /* AccountSettingsView.swift */; };
@@ -23,7 +24,6 @@
 		8FCC77722AA0843D00FB515A /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCC77712AA0843D00FB515A /* CreateAccountView.swift */; };
 		8FCC77742AA0C21C00FB515A /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCC77732AA0C21C00FB515A /* LogInView.swift */; };
 		8FCC77762AA0CA1000FB515A /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCC77752AA0CA1000FB515A /* WelcomeView.swift */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B74F11D2AB84AFD00063D08 /* AuthentificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationService.swift; sourceTree = "<group>"; };
 		7B7807752AA8C87F006655AB /* FindFriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFriendsView.swift; sourceTree = "<group>"; };
 		7B8B2CE62AA091BF0085EF28 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		7B8B2CEA2AA0C7BE0085EF28 /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
@@ -63,7 +64,6 @@
 		8FCC77712AA0843D00FB515A /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		8FCC77732AA0C21C00FB515A /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		8FCC77752AA0CA1000FB515A /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,10 +91,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		
+		7B74F11C2AB84AD300063D08 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7B74F11D2AB84AFD00063D08 /* AuthentificationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		7B9B79762A9CE23900D9D4C1 = {
 			isa = PBXGroup;
 			children = (
+				7B74F11C2AB84AD300063D08 /* Services */,
 				7B9B79812A9CE23900D9D4C1 /* meet_health_pulse */,
 				8FCC77682AA07CD200FB515A /* Views */,
 				8FCC77692AA07CFA00FB515A /* Model */,
@@ -102,7 +110,6 @@
 				7B9B79922A9CE23B00D9D4C1 /* meet_health_pulseTests */,
 				7B9B799C2A9CE23B00D9D4C1 /* meet_health_pulseUITests */,
 				7B9B79802A9CE23900D9D4C1 /* Products */,
-				7B7807742AA8C4AA006655AB /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -315,13 +322,13 @@
 			files = (
 				7B7807762AA8C87F006655AB /* FindFriendsView.swift in Sources */,
 				8FCC77742AA0C21C00FB515A /* LogInView.swift in Sources */,
-				
 				7B9B79852A9CE23900D9D4C1 /* ContentView.swift in Sources */,
 				7B8B2CE72AA091BF0085EF28 /* MenuView.swift in Sources */,
 				7B8B2CED2AA0D0F20085EF28 /* ProfilView.swift in Sources */,
 				8FCC776C2AA07E9200FB515A /* Users.swift in Sources */,
 				7B9B79832A9CE23900D9D4C1 /* meet_health_pulseApp.swift in Sources */,
 				8FCC77762AA0CA1000FB515A /* WelcomeView.swift in Sources */,
+				7B74F11E2AB84AFD00063D08 /* AuthentificationService.swift in Sources */,
 				8FCC77722AA0843D00FB515A /* CreateAccountView.swift in Sources */,
 				7B8B2CEB2AA0C7BE0085EF28 /* AccountSettingsView.swift in Sources */,
 			);
