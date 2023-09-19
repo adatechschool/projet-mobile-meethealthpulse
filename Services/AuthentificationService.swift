@@ -77,6 +77,53 @@ class AuthentificationService {
         task.resume()
     }
     
+    // Pareil pour la fonction logIn elle effectue une requête POST à l'URL http://localhost:3000/login avec un email et un mot de passe au format JSON, puis appelle un bloc de fin (closure) completion qui retourne un Bool (pour indiquer si la connexion est réussie ou non) et une éventuelle "Error"
+    func logIn(email: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
+        
+        // Créer un objet URL pointant vers "http://localhost:3000/login"
+        let url = URL(string: "http://localhost:3000/login")!
+        
+        // Initialiser une nouvelle requête HTTP à partir de l'URL précédemment créée
+        var request = URLRequest(url: url)
+        
+        // Définir la méthode HTTP de la requête sur "POST"
+        request.httpMethod = "POST"
+
+        // Créer un dictionnaire contenant l'email et le mot de passe fournis
+        let dictionary = ["email": email, "password": password]
+        
+        // Tenter de convertir le dictionnaire en données JSON. Si la sérialisation échoue : data sera nil
+        let data = try? JSONSerialization.data(withJSONObject: dictionary)
+
+        // Définir le corps de la requête HTTP avec les données JSON converties
+        request.httpBody = data
+        
+        // Ajout d'un en-tête HTTP à la requête indiquant que le type de contenu envoyé est du JSON
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        // Ajout d'un autre en-tête HTTP indiquant que la requête accepte une réponse en JSON
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+
+        // Créer une tâche qui va exécuter la requête HTTP. Une fois la requête terminée, le bloc de code (closure) fourni sera exécuté
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            // Ici on vérifie si des données ont été reçues et s'il n'y a pas d'erreur. Si l'une de ces conditions n'est pas remplie, la fonction completion est appelée avec false et l'erreur
+            guard let _ = data, error == nil else {
+                completion(false, error)
+                return
+            }
+            // Si la réponse peut être convertie en une réponse HTTP et que le code de statut est 200 : "OK", alors la fonction completion est appelée avec true pour indiquer que la connexion a réussi
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
+                completion(true, nil)
+                
+            // Sinon, la fonction completion est appelée avec false et une erreur est générée avec le code de statut HTTP
+            } else {
+                let statusCode = (response as? HTTPURLResponse)?.statusCode ?? 0
+                completion(false, NSError(domain: "", code: statusCode, userInfo: nil))
+            }
+        }// Ici on lance la tâche HTTP. La fonction dataTask(with:completion:) ne démarre pas la tâche par elle-même c'est pourquoi on doit appeler resume() pour démarrer ou redémarrer la tâche
+        task.resume()
+    }
     
 }
 
