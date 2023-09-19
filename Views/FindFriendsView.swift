@@ -20,6 +20,10 @@ struct FindFriendsView: View {
     @State private var minAge = ""
     @State private var maxAge = ""
     
+    @State var task = ChooseActivities(name: "", servingActivities: [])
+    @ObservedObject private var viewModel = AccountSettingsViewModel()
+    
+    
     
     var body: some View {
         
@@ -30,6 +34,14 @@ struct FindFriendsView: View {
                 Form {
                     Section(header: Text("Activity")) {
                         ActivityFieldView(presented: $presented, activity: $selectedActivity, value: $activity)
+                        
+                        /*MultiSelector(
+                            label: Text("Choose activities"),
+                            options: viewModel.activities,
+                            optionToString: { $0.name },
+                            selected: $task.servingActivities
+                        )*/
+                        
                     }
                     Section (header: Text ("Filtres de recherches")) {
                         //TextField("Activité", text: $activity)
@@ -83,7 +95,7 @@ struct FindFriendsView: View {
                 .navigationBarBackButtonHidden(true)
                 .navigationBarTitleDisplayMode(.inline)
                 
-                Button(action: {
+                /*Button(action: {
                     // Send to Database
                     // signUp.toggle()
                 }, label: {
@@ -94,7 +106,16 @@ struct FindFriendsView: View {
                         .background(Color("Primary"))
                         .foregroundColor(.white)
                         .cornerRadius(8)
-                })
+                })*/
+                NavigationLink(destination: FindFriendsResults(users: filterUsers(activity: selectedActivity ?? "", users: users)
+                  
+                )) {
+                    Text("Find")
+                        .frame(width: 150, height: 50, alignment: .center)
+                        .background(Color("Primary"))
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                }
                 .padding()
                 
             }

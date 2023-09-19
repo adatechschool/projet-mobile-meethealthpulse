@@ -22,13 +22,6 @@ struct AccountSettingsView: View {
     let gender = ["Not disclose", "Woman", "Man"]
     
     @State var task = ChooseActivities(name: "", servingActivities: [])
-    
-    /*let allGoals: [Goal] = [
-        Goal(name: "Learn Japanese"),
-        Goal(name: "Learn SwiftUI"),
-        Goal(name: "Learn Serverless with Swift")
-    ]*/
-    
     @ObservedObject private var viewModel = AccountSettingsViewModel()
     
     var body: some View {
