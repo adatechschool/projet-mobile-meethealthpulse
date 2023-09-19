@@ -10,14 +10,17 @@ import SwiftUI
 /*class FormLogInViewModel: ObservableObject{
     @State var email = ""
     @State var password = ""
-    
-    
 }*/
 
 struct LogInView: View {
     //@State  var viewModel = FormLogInViewModel()
     @State private var createAccount = false
     @State private var logOn = false
+    
+    @State private var showAlert = false
+    @State private var alertMessage = ""
+
+    
     @State private var email = ""
     @State private var password = ""
     
@@ -39,21 +42,20 @@ struct LogInView: View {
                             .foregroundColor(.black)
                             .fontWeight(.bold)
                     }
-
-                    
                 }
                 
                 Form {
                     Section(header: Text("Email")) {
                         TextField("email@example", text: //$viewModel.email
-                        $email)
+                                  $email)
                         
                     }
                     
                     Section(
                         header: Text("Password"),
                         footer: Button(action: {
-                            //send an email
+                            // Envoyer un email
+                            // TODO: logique pour la récupération du mot de passe
                         }, label: {
                             Text("Forgot Password")
                                 .font(.subheadline)
@@ -61,39 +63,44 @@ struct LogInView: View {
                                 .foregroundColor(.gray)
                         })
                     ) {
-                            
-                            SecureField("Password", text: //$viewModel.password
-                            $password)
+                        
+                        SecureField("Password", text: //$viewModel.password
+                                    $password)
                     }
+                    .textInputAutocapitalization(.never)
+                    
+                    Button(action: {
+                        AuthentificationService.shared.logIn(email: email, password: password) { success, error in
+                            if success {
+                                print("Connexion réussie!")
+                                logOn.toggle()
+                            } else {
+                                alertMessage = error?.localizedDescription ?? "Erreur inconnue"
+                                showAlert = true
+                            }
+                        }
+                    }, label: {
+                        Text("Log In")
+                            .fontWeight(.bold)
+                            .frame(width: 150, height: 50, alignment: .center)
+                            .background(Color("Primary"))
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+                    })
+                    .alert(isPresented: $showAlert) {
+                        Alert(title: Text("Erreur de connexion"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                    }
+                    .padding()
                     
                 }
-                .textInputAutocapitalization(.never)
-                
-                Button(action: {
-                    // Send to Database
-                    logOn.toggle()
-                }, label: {
-                    Text("Log In")
-                        .fontWeight(.bold)
-                        .frame(width: 150,
-                               height: 50,
-                               alignment: .center)
-                        .background(Color("Primary"))
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
-                })
-                .padding()
-                
+                .fullScreenCover(isPresented: $createAccount) {
+                    CreateAccountView()
+                }
+                .fullScreenCover(isPresented: $logOn) {
+                    ProfilView()
+                }
             }
         }
-        .fullScreenCover(isPresented: $createAccount) {
-            CreateAccountView()
-        }
-        .fullScreenCover(isPresented: $logOn) {
-            ProfilView()
-        }
-        
-        
     }
 }
 
