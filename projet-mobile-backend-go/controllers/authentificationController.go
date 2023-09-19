@@ -2,8 +2,11 @@
 package controllers
 
 import (
+	"github.com/dgrijalva/jwt-go"
 	"golang.org/x/crypto/bcrypt"
 	"net/http"
+	"time"
+
 	// Importer le package models qui définit la structure des utilisateurs
 	"projet-mobile-backend-go/models"
 
@@ -67,4 +70,18 @@ func LoginHandler(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, gin.H{"token": token})
+}
+
+func generateToken(user models.User) (string, error) {
+	var jwtKey = []byte("secret_key") // Mettre la clé secrète dans le .env
+
+	// Créez un token avec une date d'expiration
+	expirationTime := time.Now().Add(24 * time.Hour)
+	claims := &jwt.StandardClaims{
+		Subject:   user.ID,
+		ExpiresAt: expirationTime.Unix(),
+	}
+
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
+	return token.SignedString(jwtKey)
 }
