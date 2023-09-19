@@ -2,8 +2,12 @@
 package controllers
 
 import (
+	"golang.org/x/crypto/bcrypt"
+	"net/http"
 	// Importer le package models qui définit la structure des utilisateurs
 	"projet-mobile-backend-go/models"
+
+	"projet-mobile-backend-go/database" // importer le package de base de données
 
 	// Importer le package gin, un cadre très populaire pour écrire des applications en Go
 	"github.com/gin-gonic/gin"
@@ -32,4 +36,35 @@ func SignupHandler(c *gin.Context) {
 
 	// Si c'est "OK" on renvoie une réponse HTTP avec un statut 200 et un message JSON que l'utilisateur est inscrit
 	c.JSON(200, gin.H{"message": "User signed up successfully"})
+}
+
+// LoginHandler sera appelée chaque fois qu'une requête POST est effectuée sur l'URL /login.
+func LoginHandler(c *gin.Context) {
+	var user models.User
+	if err := c.ShouldBindJSON(&user); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid request payload"})
+		return
+	}
+
+	// Chercher l'utilisateur dans la base de données par son email
+	foundUser, err := database.FindUserByEmail(user.Email)
+	if err != nil {
+		c.JSON(http.StatusUnauthorized, gin.H{"error": "Incorrect email or password"})
+		return
+	}
+
+	// Vérifier que le mot de passe est correct
+	if err := bcrypt.CompareHashAndPassword([]byte(foundUser.Password), []byte(user.Password)); err != nil {
+		c.JSON(http.StatusUnauthorized, gin.H{"error": "Incorrect email or password"})
+		return
+	}
+
+	// Générer le JWT
+	token, err := generateToken(foundUser)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not generate token"})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"token": token})
 }
