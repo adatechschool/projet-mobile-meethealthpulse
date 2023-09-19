@@ -20,17 +20,26 @@ struct CreateAccountView: View {
     
     //@StateObject var viewModel = FormViewModel()
     @State private var logIn = false
-    @State private var signOn = false
+    @State private var signUp = false
+
+    @State var selectedDate: Date? = nil
+    @State private var presented = false
     
     @State private var showAlert = false
     @State private var alertMessage = ""
-        
+
     @State var username = ""
     @State var dateOfBirth = ""
     @State var email = ""
     @State var password = ""
     @State var passwordAgain = ""
     
+    var dateFormatter: DateFormatter {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .long
+            return formatter
+        }
+
     var body: some View {
         NavigationView {
             VStack(alignment: .center){
@@ -41,7 +50,7 @@ struct CreateAccountView: View {
                 
                 HStack {
                     Text("Enter your account details below or")
-                    
+
                     Button {
                         logIn.toggle()
                     } label: {
@@ -61,14 +70,13 @@ struct CreateAccountView: View {
                     
                     
                     Section(header: Text("Date of birth")) {
-                        TextField("DD / MM / YYYY", text: //$viewModel.dateOfBirth
-                                  $dateOfBirth)
+                        DateField(placeholder: "Choose your birthday", presented: $presented, date: $selectedDate, value: $dateOfBirth)
+
                     }
-                    
+
                     
                     Section(header: Text("Email")) {
-                        TextField("email@example", text: //$viewModel.email
-                                  $email)
+                        EmailView()
                     }
                     
                     Section(
@@ -84,6 +92,7 @@ struct CreateAccountView: View {
                 }
                 .textInputAutocapitalization(.never)
                 
+
                 Button(action: {
                     if password != passwordAgain {
                         alertMessage = "Les mots de passe ne correspondent pas."
@@ -91,19 +100,19 @@ struct CreateAccountView: View {
                         return
                     }
                     AuthentificationService.shared.signUp(username: username, dateOfBirth: dateOfBirth, email: email, password: password) { success, error in
-                        
+
                         if success {
                             print("Inscription réussie!")
-                            
+
                             // On peut rediriger l'utilisateur vers ProfilView.
-                            signOn = true
+                            signUp = true
                         } else {
                             alertMessage = error?.localizedDescription ?? "Erreur inconnue"
                             showAlert = true
                         }
                     }
                 }, label: {
-                    Text("Sign On")
+                    Text("Sign Up")
                         .frame(width: 150, height: 50, alignment: .center)
                         .background(Color("Primary"))
                         .foregroundColor(.white)
@@ -111,15 +120,16 @@ struct CreateAccountView: View {
                 }).padding()
                     .alert(isPresented: $showAlert) {
                         Alert(title: Text("Erreur"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
-                    }
+
             }
-            .fullScreenCover(isPresented: $logIn) {
+            }.fullScreenCover(isPresented: $logIn) {
                 LogInView()
             }
-            .fullScreenCover(isPresented: $signOn) {
+            .fullScreenCover(isPresented: $signUp) {
                 ProfilView()
             }
         }
+        .calendarSheet(presented: $presented, value: $dateOfBirth)
     }
 }
 
@@ -129,3 +139,4 @@ struct CreateAccount_Previews: PreviewProvider {
             //.preferredColorScheme(.dark)
     }
 }
+

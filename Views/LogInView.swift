@@ -16,11 +16,11 @@ struct LogInView: View {
     //@State  var viewModel = FormLogInViewModel()
     @State private var createAccount = false
     @State private var logOn = false
-    
+
     @State private var showAlert = false
     @State private var alertMessage = ""
 
-    
+
     @State private var email = ""
     @State private var password = ""
     
@@ -46,8 +46,9 @@ struct LogInView: View {
                 
                 Form {
                     Section(header: Text("Email")) {
-                        TextField("email@example", text: //$viewModel.email
-                                  $email)
+                        EmailView()
+                        //TextField("email@example", text: //$viewModel.email
+                                  //$email)
                         
                     }
                     
@@ -63,12 +64,12 @@ struct LogInView: View {
                                 .foregroundColor(.gray)
                         })
                     ) {
-                        
+
                         SecureField("Password", text: //$viewModel.password
                                     $password)
                     }
                     .textInputAutocapitalization(.never)
-                    
+
                     Button(action: {
                         AuthentificationService.shared.logIn(email: email, password: password) { success, error in
                             if success {
@@ -91,7 +92,7 @@ struct LogInView: View {
                         Alert(title: Text("Erreur de connexion"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
                     }
                     .padding()
-                    
+
                 }
                 .fullScreenCover(isPresented: $createAccount) {
                     CreateAccountView()
@@ -107,5 +108,6 @@ struct LogInView: View {
 struct LogIn_Previews: PreviewProvider {
     static var previews: some View {
         LogInView()
+
     }
 }

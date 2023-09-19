@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Football",
+        "imageName": "figure.soccer",
+    },
+    {
+        "id": 2,
+        "name": "Course",
+        "imageName": "figure.run",
+    },
+    {
+        "id": 3,
+        "name": "Natation",
+        "imageName": "figure.pool.swim",
+    },
+    {
+        "id": 4,
+        "name": "Tennis",
+        "imageName": "figure.tennis",
+    },
+    {
+        "id": 5,
+        "name": "Curling",
+        "imageName": "figure.curling",
+    },
+    {
+        "id": 6,
+        "name": "Yoga",
+        "imageName": "figure.yoga",
+    },
+    {
+        "id": 7,
+        "name": "Escalade",
+        "imageName": "figure.climbing",
+    },
+    {
+        "id": 8,
+        "name": "Foot US",
+        "imageName": "figure.american.football",
+    },
+    {
+        "id": 9,
+        "name": "Gym",
+        "imageName": "figure.gymnastics",
+    },
+    {
+        "id": 10,
+        "name": "Ski",
+        "imageName": "figure.skiing.downhill",
+    },
+    {
+        "id": 11,
+        "name": "Méditation",
+        "imageName": "figure.mind.and.body",
+    },
+    {
+        "id": 12,
+        "name": "Equitation",
+        "imageName": "figure.equestrian.sports",
+    }
+]

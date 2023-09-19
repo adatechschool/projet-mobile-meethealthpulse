@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+struct User: Hashable, Codable, Identifiable {
+    var id: Int
+    var name: String
+
+    var activity: String
+    
+    
+}

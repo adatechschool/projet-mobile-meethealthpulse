@@ -10,7 +10,7 @@ import SwiftUI
 struct WelcomeView: View {
     
     @State private var logIn = false
-    @State private var signIn = false
+    @State private var signUp = false
     
     var body: some View {
         VStack {
@@ -37,10 +37,10 @@ struct WelcomeView: View {
             HStack {
                 Button(action: {
                     // Go to Create account view
-                    signIn.toggle()
+                    signUp.toggle()
                     
                 }, label: {
-                    Text("Sign On")
+                    Text("Sign Up")
                         .fontWeight(.bold)
                         .frame(width: 150,
                                height: 50,
@@ -74,7 +74,7 @@ struct WelcomeView: View {
         .fullScreenCover(isPresented: $logIn){
             LogInView()
         }
-        .fullScreenCover(isPresented: $signIn){
+        .fullScreenCover(isPresented: $signUp){
             CreateAccountView()
         }
         
