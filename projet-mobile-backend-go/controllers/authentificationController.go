@@ -3,6 +3,7 @@ package controllers
 
 import (
 	"context"
+	"fmt"
 	"os"
 
 	"github.com/dgrijalva/jwt-go"
@@ -60,7 +61,7 @@ func SignupHandler(c *gin.Context) {
 
 	// Si c'est "OK" on renvoie une réponse HTTP avec un statut 200 et un message JSON que l'utilisateur est inscrit
 	// avec la valeur récupérée du "username" pour l'afficher sur profilView
-	c.JSON(200, gin.H{"message": "User was registered successfully", "username": user.Username})
+	c.JSON(200, gin.H{"message": "User was registered successfully!", "username": user.Username})
 
 }
 
@@ -73,9 +74,10 @@ func LoginHandler(c *gin.Context) {
 	}
 
 	// Chercher l'utilisateur dans la base de données par son email
+
 	foundUser, err := database.FindUserByEmail(user.Email)
 
-	if foundUser == nil {
+	if foundUser == nil || err != nil {
 		c.JSON(http.StatusUnauthorized, gin.H{"error": "User not found"})
 		return
 	}
@@ -98,7 +100,11 @@ func LoginHandler(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{"token": token})
+	// Si c'est "OK" on renvoie une réponse HTTP avec un statut 200 et un message JSON que l'utilisateur vient de
+	//se connecter avec la valeur récupérée du "username" pour l'afficher sur profilView
+	c.JSON(http.StatusOK, gin.H{"message": "User was connected!", "username": user.Username, "token": token})
+
+	fmt.Println("Searching for email:", user.Email)
 }
 
 func generateToken(user models.User) (string, error) {

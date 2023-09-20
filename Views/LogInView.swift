@@ -13,6 +13,9 @@ import SwiftUI
 }*/
 
 struct LogInView: View {
+    
+    @EnvironmentObject var userManager: UserManager
+    
     //@State  var viewModel = FormLogInViewModel()
     @State private var createAccount = false
     @State private var logOn = false
@@ -20,7 +23,7 @@ struct LogInView: View {
     @State private var showAlert = false
     @State private var alertMessage = ""
 
-
+    @State var username = ""
     @State private var email = ""
     @State private var password = ""
     
@@ -84,6 +87,7 @@ struct LogInView: View {
                         AuthentificationService.shared.logIn(email: email, password: password) { success, response, error in
                             if success {
                                 print("Connexion réussie!")
+                                userManager.username = username
                                 logOn.toggle()
                             } else {
                                 alertMessage = error?.localizedDescription ?? "Erreur inconnue"
@@ -108,7 +112,7 @@ struct LogInView: View {
                     CreateAccountView()
                 }
                 .fullScreenCover(isPresented: $logOn) {
-                    ProfilView()
+                    ProfilView(isNewlyRegistered: true)
                 }
             }
         }

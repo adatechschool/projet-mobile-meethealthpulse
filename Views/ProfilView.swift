@@ -112,6 +112,9 @@ struct ProfilView: View {
         .fullScreenCover(isPresented: $shouldShowWelcome) {
             WelcomeView()
        }
+        .fullScreenCover(isPresented: $showHomeView) {
+           WelcomeView()
+       }
        
     }
 }
