@@ -42,7 +42,10 @@ struct CreateAccountView: View {
 
     // Fonction qui vérifie si les inputs sont vides ou remplis
     func areFieldsValid() -> Bool {
-        return !username.isEmpty && !dateOfBirth.isEmpty && !email.isEmpty && !password.isEmpty
+        return !username.isEmpty &&
+        !dateOfBirth.isEmpty &&
+        !email.isEmpty
+        //&& !password.isEmpty
     }
 
     var body: some View {
@@ -82,7 +85,7 @@ struct CreateAccountView: View {
                     
                     
                     Section(header: Text("Email")) {
-                        EmailView()
+                        EmailView(email: $email)
                         //TextField("email@example", text: //$viewModel.email
                         //$email)
                     }
@@ -104,6 +107,13 @@ struct CreateAccountView: View {
                             if !areFieldsValid() {
                                 alertMessage = "Veuillez remplir tous les champs."
                                 showAlert = true
+                                print("areFieldsValid() =", areFieldsValid())
+                                print("username =", username)
+                                print("dob =", dateOfBirth)
+                                print("email =", email)
+                                print("password =", password)
+                                print("passwordAgain =", passwordAgain)
+                                
                                 return
                             }
                             if password != passwordAgain {

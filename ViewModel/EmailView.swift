@@ -14,11 +14,16 @@ class ViewModel: ObservableObject {
 
 struct EmailView: View {
     @StateObject var viewModel = ViewModel()
+    @Binding var email: String
 
     var body: some View {
         VStack {
             EmailInputView(placeHolder: "Email@example.com", txt: $viewModel.email)
-                .onChange(of: viewModel.email, perform: onEmailInputChanged)
+                .onChange(of: viewModel.email) { newValue in
+                    email = newValue
+                    onEmailInputChanged(changedEmail: newValue)
+                    
+                }
         }
     }
     
@@ -44,7 +49,9 @@ struct EmailInputView: View {
 }
 
 struct EmailView_Previews: PreviewProvider {
+    @State static var email: String = ""
+    
     static var previews: some View {
-        EmailView()
+        EmailView(email: $email)
     }
 }

@@ -51,7 +51,7 @@ struct LogInView: View {
                 
                 Form {
                     Section(header: Text("Email")) {
-                        EmailView()
+                        EmailView(email: $email)
                         //TextField("email@example", text: //$viewModel.email
                                   //$email)
                         
