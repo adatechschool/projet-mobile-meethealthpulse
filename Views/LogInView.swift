@@ -24,6 +24,11 @@ struct LogInView: View {
     @State private var email = ""
     @State private var password = ""
     
+    // Fonction qui vérifie si les inputs sont vides ou remplis
+    func areFieldsValid() -> Bool {
+        return !email.isEmpty && !password.isEmpty
+    }
+    
     var body: some View {
         NavigationView {
             VStack(alignment: .center){
@@ -71,6 +76,11 @@ struct LogInView: View {
                     .textInputAutocapitalization(.never)
 
                     Button(action: {
+                        if !areFieldsValid() {
+                            alertMessage = "Veuillez remplir tous les champs."
+                            showAlert = true
+                            return
+                        }
                         AuthentificationService.shared.logIn(email: email, password: password) { success, error in
                             if success {
                                 print("Connexion réussie!")
