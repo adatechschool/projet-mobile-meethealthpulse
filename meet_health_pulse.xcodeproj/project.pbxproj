@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B5C0E9B2ABB05B700BA2B84 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C0E9A2ABB05B700BA2B84 /* UserManager.swift */; };
 		7B74F11E2AB84AFD00063D08 /* AuthentificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B74F11D2AB84AFD00063D08 /* AuthentificationService.swift */; };
 		7B7807762AA8C87F006655AB /* FindFriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7807752AA8C87F006655AB /* FindFriendsView.swift */; };
 		7B8B2CE72AA091BF0085EF28 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8B2CE62AA091BF0085EF28 /* MenuView.swift */; };
@@ -62,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B5C0E9A2ABB05B700BA2B84 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		7B74F11D2AB84AFD00063D08 /* AuthentificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationService.swift; sourceTree = "<group>"; };
 		7B7807752AA8C87F006655AB /* FindFriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFriendsView.swift; sourceTree = "<group>"; };
 		7B8B2CE62AA091BF0085EF28 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				7B9B79822A9CE23900D9D4C1 /* meet_health_pulseApp.swift */,
 				7B9B79862A9CE23B00D9D4C1 /* Assets.xcassets */,
 				7B9B79882A9CE23B00D9D4C1 /* Preview Content */,
+				7B5C0E9A2ABB05B700BA2B84 /* UserManager.swift */,
 			);
 			path = meet_health_pulse;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				8FF2F84C2AAF5EF900C6FC8E /* ActivityRow.swift in Sources */,
 				8FCC77742AA0C21C00FB515A /* LogInView.swift in Sources */,
 				8FD369192AB98B5B00ECFA3E /* FindFriendsRow.swift in Sources */,
+				7B5C0E9B2ABB05B700BA2B84 /* UserManager.swift in Sources */,
 				7B9B79852A9CE23900D9D4C1 /* ContentView.swift in Sources */,
 				7B8B2CE72AA091BF0085EF28 /* MenuView.swift in Sources */,
 				8F399BEB2AAA022800A99741 /* Globals.swift in Sources */,

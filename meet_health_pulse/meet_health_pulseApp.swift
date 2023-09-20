@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct meet_health_pulseApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
+    // Ajout de UserManager pour gérer les données entrantes : comme le username..
+    @StateObject var userManager = UserManager()
+       
+       var body: some Scene {
+           WindowGroup {
+               
+               ContentView()
+                   .environmentObject(userManager)
+           }
+       }
+    
 }
