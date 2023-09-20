@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AccountSettingsView: View {
+    
     // Déclarer une var qui est un état "a state" pour suivre si le bouton "Save" a été appuyé
     @State private var showProfilView = false
     
@@ -22,7 +23,6 @@ struct AccountSettingsView: View {
     let gender = ["Not disclose", "Woman", "Man"]
     
     @State var task = ChooseActivities(name: "", servingActivities: [])
-    @ObservedObject private var viewModel = AccountSettingsViewModel()
     
     var body: some View {
         NavigationView{
@@ -62,13 +62,13 @@ struct AccountSettingsView: View {
                                 // Ajout du padding à droite et à gauche
                                 .padding(.horizontal, 15)
                         
-                        // Ajout du text "Add your Age" avec un alignement à gauche
+                        // Ajout du text "Add your gender" avec un alignement à gauche
                         
                             Text("Add your gender")
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .padding(.leading)
                         VStack{
-                            // Ajout de "about me input"
+                            // Ajout de "Select an option"
                             Picker("Select an option", selection: $selectedGender){
                                 ForEach(0..<gender.count, id: \.self) { index in
                                     Text(gender[index])
@@ -105,7 +105,7 @@ struct AccountSettingsView: View {
                         
                         MultiSelector(
                             label: Text("Choose activities"),
-                            options: viewModel.activities,
+                            options: activities,
                             optionToString: { $0.name },
                             selected: $task.servingActivities
                         )

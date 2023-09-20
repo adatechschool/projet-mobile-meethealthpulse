@@ -30,7 +30,6 @@
 		8FC552712AB888D700428EA5 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC552702AB888D700428EA5 /* Goal.swift */; };
 		8FC552732AB88B3700428EA5 /* MultiSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC552722AB88B3700428EA5 /* MultiSelectionView.swift */; };
 		8FC552752AB88B4000428EA5 /* MultiSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC552742AB88B4000428EA5 /* MultiSelector.swift */; };
-		8FC552772AB8902700428EA5 /* AccountSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC552762AB8902700428EA5 /* AccountSettingsViewModel.swift */; };
 		8FC552792AB894D300428EA5 /* FindFriendsResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC552782AB894D300428EA5 /* FindFriendsResults.swift */; };
 		8FCC776C2AA07E9200FB515A /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCC776B2AA07E9200FB515A /* Users.swift */; };
 		8FCC77702AA0803000FB515A /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 8FCC776F2AA0803000FB515A /* users.json */; };
@@ -89,7 +88,6 @@
 		8FC552702AB888D700428EA5 /* Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		8FC552722AB88B3700428EA5 /* MultiSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiSelectionView.swift; sourceTree = "<group>"; };
 		8FC552742AB88B4000428EA5 /* MultiSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiSelector.swift; sourceTree = "<group>"; };
-		8FC552762AB8902700428EA5 /* AccountSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsViewModel.swift; sourceTree = "<group>"; };
 		8FC552782AB894D300428EA5 /* FindFriendsResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFriendsResults.swift; sourceTree = "<group>"; };
 		8FCC776B2AA07E9200FB515A /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		8FCC776F2AA0803000FB515A /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
@@ -204,7 +202,6 @@
 				8F598AF82AAF4CEE0004BF16 /* ActivityFieldView.swift */,
 				8F598AF42AAF40000004BF16 /* ActivityField.swift */,
 				8F399BEC2AAA026400A99741 /* CalendarSheet.swift */,
-				8FC552762AB8902700428EA5 /* AccountSettingsViewModel.swift */,
 				8F399BEE2AAA08A700A99741 /* EmailView.swift */,
 				8F598AFA2AAF4D1C0004BF16 /* ActivityPickerView.swift */,
 				8FF2F84B2AAF5EF900C6FC8E /* ActivityRow.swift */,
@@ -412,7 +409,6 @@
 				7B8B2CEB2AA0C7BE0085EF28 /* AccountSettingsView.swift in Sources */,
 				8F399BEF2AAA08A700A99741 /* EmailView.swift in Sources */,
 				8FC552712AB888D700428EA5 /* Goal.swift in Sources */,
-				8FC552772AB8902700428EA5 /* AccountSettingsViewModel.swift in Sources */,
 				8F598AF92AAF4CEE0004BF16 /* ActivityFieldView.swift in Sources */,
 				8F598AF52AAF40000004BF16 /* ActivityField.swift in Sources */,
 			);

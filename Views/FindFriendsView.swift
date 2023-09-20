@@ -21,9 +21,6 @@ struct FindFriendsView: View {
     @State private var maxAge = ""
     
     @State var task = ChooseActivities(name: "", servingActivities: [])
-    @ObservedObject private var viewModel = AccountSettingsViewModel()
-    
-    
     
     var body: some View {
         
