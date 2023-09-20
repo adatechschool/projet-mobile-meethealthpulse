@@ -81,7 +81,7 @@ struct LogInView: View {
                             showAlert = true
                             return
                         }
-                        AuthentificationService.shared.logIn(email: email, password: password) { success, error in
+                        AuthentificationService.shared.logIn(email: email, password: password) { success, response, error in
                             if success {
                                 print("Connexion réussie!")
                                 logOn.toggle()
