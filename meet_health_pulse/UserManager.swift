@@ -10,7 +10,8 @@ import Foundation
 // C'est la partie qui gère la réponse type "AuthModels.swift" pour récupérer la structure JSON que le serveur renvoie comme réponse
 struct AuthResponse: Decodable {
     let username: String
-    let token: String
+    let token: String?
+    
 }
 
 //  C'est la partie qui gère le "UserManager.swift" pour récupérer le username

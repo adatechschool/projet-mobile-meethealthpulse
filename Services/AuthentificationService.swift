@@ -74,6 +74,8 @@ class AuthentificationService {
                 // Vérification du code de statut de la réponse. (Si c'est 200 (OK), cela signifie que la requête a réussi. Sinon, il signale une erreur avec le code de statut reçu)
                 if httpResponse.statusCode == 200 {
                     
+                    print("Coucou", httpResponse.statusCode)
+                    
                     do {
                         let decoder = JSONDecoder()
                         let response = try decoder.decode(AuthResponse.self, from: data)

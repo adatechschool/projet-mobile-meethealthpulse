@@ -59,7 +59,9 @@ func SignupHandler(c *gin.Context) {
 	}
 
 	// Si c'est "OK" on renvoie une réponse HTTP avec un statut 200 et un message JSON que l'utilisateur est inscrit
-	c.JSON(200, gin.H{"message": "User was registered successfully"})
+	// avec la valeur récupérée du "username" pour l'afficher sur profilView
+	c.JSON(200, gin.H{"message": "User was registered successfully", "username": user.Username})
+
 }
 
 // LoginHandler sera appelée chaque fois qu'une requête POST est effectuée sur l'URL /login.

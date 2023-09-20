@@ -18,21 +18,24 @@ import SwiftUI
 
 struct CreateAccountView: View {
     
+    
+    @EnvironmentObject var userManager: UserManager
+    
     //@StateObject var viewModel = FormViewModel()
-       @State private var logIn = false
-       @State private var signUp = false
+    @State private var logIn = false
+    @State private var signUp = false
 
-       @State var selectedDate: Date? = nil
-       @State private var presented = false
+    @State var selectedDate: Date? = nil
+    @State private var presented = false
        
-       @State private var showAlert = false
-       @State private var alertMessage = ""
+    @State private var showAlert = false
+    @State private var alertMessage = ""
 
-       @State var username = ""
-       @State var dateOfBirth = ""
-       @State var email = ""
-       @State var password = ""
-       @State var passwordAgain = ""
+    @State var username = ""
+    @State var dateOfBirth = ""
+    @State var email = ""
+    @State var password = ""
+    @State var passwordAgain = ""
 
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
@@ -135,8 +138,10 @@ struct CreateAccountView: View {
                                 // Si on arrive jusqu'ici, c'est qu'il n'y a pas d'erreur
                                 if success {
                                     print("Inscription réussie!")
+                                    userManager.username = username
                                     signUp = true
-                                } else {
+                                }
+                                else {
                                     alertMessage = "Erreur inconnue"
                                     showAlert = true
                                 }
@@ -158,7 +163,7 @@ struct CreateAccountView: View {
                             LogInView()
                         }
                         .fullScreenCover(isPresented: $signUp) {
-                            ProfilView()
+                            ProfilView(isNewlyRegistered: true)
                         }
                 }
         .calendarSheet(presented: $presented, value: $dateOfBirth)
