@@ -19,30 +19,36 @@ import SwiftUI
 struct CreateAccountView: View {
     
     //@StateObject var viewModel = FormViewModel()
-    @State private var logIn = false
-    @State private var signUp = false
+       @State private var logIn = false
+       @State private var signUp = false
 
-    @State var selectedDate: Date? = nil
-    @State private var presented = false
-    
-    @State private var showAlert = false
-    @State private var alertMessage = ""
+       @State var selectedDate: Date? = nil
+       @State private var presented = false
+       
+       @State private var showAlert = false
+       @State private var alertMessage = ""
 
-    @State var username = ""
-    @State var dateOfBirth = ""
-    @State var email = ""
-    @State var password = ""
-    @State var passwordAgain = ""
-    
+       @State var username = ""
+       @State var dateOfBirth = ""
+       @State var email = ""
+       @State var password = ""
+       @State var passwordAgain = ""
+
     var dateFormatter: DateFormatter {
-            let formatter = DateFormatter()
-            formatter.dateStyle = .long
-            return formatter
-        }
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        return formatter
+    }
+
+    // Fonction qui vérifie si les inputs sont vides ou remplis
+    func areFieldsValid() -> Bool {
+        return !username.isEmpty && !dateOfBirth.isEmpty && !email.isEmpty && !password.isEmpty
+    }
 
     var body: some View {
         NavigationView {
-            VStack(alignment: .center){
+            VStack(alignment: .center) {
+                
                 Text("Create an account")
                     .font(.title)
                     .bold()
@@ -50,7 +56,7 @@ struct CreateAccountView: View {
                 
                 HStack {
                     Text("Enter your account details below or")
-
+                    
                     Button {
                         logIn.toggle()
                     } label: {
@@ -71,12 +77,14 @@ struct CreateAccountView: View {
                     
                     Section(header: Text("Date of birth")) {
                         DateField(placeholder: "Choose your birthday", presented: $presented, date: $selectedDate, value: $dateOfBirth)
-
+                        
                     }
-
+                    
                     
                     Section(header: Text("Email")) {
                         EmailView()
+                        //TextField("email@example", text: //$viewModel.email
+                        //$email)
                     }
                     
                     Section(
@@ -91,44 +99,47 @@ struct CreateAccountView: View {
                         }
                 }
                 .textInputAutocapitalization(.never)
-                
-
-                Button(action: {
-                    if password != passwordAgain {
-                        alertMessage = "Les mots de passe ne correspondent pas."
-                        showAlert = true
-                        return
-                    }
-                    AuthentificationService.shared.signUp(username: username, dateOfBirth: dateOfBirth, email: email, password: password) { success, error in
-
-                        if success {
-                            print("Inscription réussie!")
-
-                            // On peut rediriger l'utilisateur vers ProfilView.
-                            signUp = true
-                        } else {
-                            alertMessage = error?.localizedDescription ?? "Erreur inconnue"
-                            showAlert = true
+                        
+                        Button(action: {
+                            if !areFieldsValid() {
+                                alertMessage = "Veuillez remplir tous les champs."
+                                showAlert = true
+                                return
+                            }
+                            if password != passwordAgain {
+                                alertMessage = "Les mots de passe ne correspondent pas."
+                                showAlert = true
+                                return
+                            }
+                            
+                            AuthentificationService.shared.signUp(username: username, dateOfBirth: dateOfBirth, email: email, password: password) { success, error in
+                                if success {
+                                    print("Inscription réussie!")
+                                    signUp = true
+                                } else {
+                                    alertMessage = error?.localizedDescription ?? "Erreur inconnue"
+                                    showAlert = true
+                                }
+                            }
+                        }, label: {
+                            Text("Sign Up")
+                                .frame(width: 150, height: 50, alignment: .center)
+                                .background(Color("Primary"))
+                                .foregroundColor(.white)
+                                .cornerRadius(8)
+                        })
+                        .padding()
+                        .alert(isPresented: $showAlert) {
+                            Alert(title: Text("Erreur"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
                         }
                     }
-                }, label: {
-                    Text("Sign Up")
-                        .frame(width: 150, height: 50, alignment: .center)
-                        .background(Color("Primary"))
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
-                }).padding()
-                    .alert(isPresented: $showAlert) {
-                        Alert(title: Text("Erreur"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
-
-            }
-            }.fullScreenCover(isPresented: $logIn) {
-                LogInView()
-            }
-            .fullScreenCover(isPresented: $signUp) {
-                ProfilView()
-            }
-        }
+                        .fullScreenCover(isPresented: $logIn) {
+                            LogInView()
+                        }
+                        .fullScreenCover(isPresented: $signUp) {
+                            ProfilView()
+                        }
+                }
         .calendarSheet(presented: $presented, value: $dateOfBirth)
     }
 }
