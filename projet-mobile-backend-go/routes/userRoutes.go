@@ -26,7 +26,7 @@ func RegisterRoutes() *gin.Engine {
 
 	// Ajout du nouvel endpoint pour la racine "/"
 	route.GET("/", func(c *gin.Context) {
-		c.String(200, "Bienvenue sur mon API!")
+		c.String(200, "Welcome to MHP (Meet, Health, Pulse)")
 	})
 
 	return route
