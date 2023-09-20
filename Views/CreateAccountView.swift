@@ -122,11 +122,12 @@ struct CreateAccountView: View {
                                 return
                             }
                             
-                            AuthentificationService.shared.signUp(username: username, dateOfBirth: dateOfBirth, email: email, password: password) { success, error in
+                            AuthentificationService.shared.signUp(username: username, dateOfBirth: dateOfBirth, email: email, password: password) { success, response, error in
                                 if success {
                                     print("Inscription réussie!")
                                     signUp = true
                                 } else {
+                                    
                                     alertMessage = error?.localizedDescription ?? "Erreur inconnue"
                                     showAlert = true
                                 }
