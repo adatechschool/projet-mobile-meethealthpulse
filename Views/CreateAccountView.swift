@@ -123,15 +123,25 @@ struct CreateAccountView: View {
                             }
                             
                             AuthentificationService.shared.signUp(username: username, dateOfBirth: dateOfBirth, email: email, password: password) { success, response, error in
+
+                                // On imprime l'erreur pour voir sa description
+                                if let error = error {
+                                    print("Erreur lors de l'inscription:", error)
+                                    alertMessage = error.localizedDescription
+                                    showAlert = true
+                                    return
+                                }
+
+                                // Si on arrive jusqu'ici, c'est qu'il n'y a pas d'erreur
                                 if success {
                                     print("Inscription réussie!")
                                     signUp = true
                                 } else {
-                                    
-                                    alertMessage = error?.localizedDescription ?? "Erreur inconnue"
+                                    alertMessage = "Erreur inconnue"
                                     showAlert = true
                                 }
                             }
+
                         }, label: {
                             Text("Sign Up")
                                 .frame(width: 150, height: 50, alignment: .center)

@@ -80,7 +80,7 @@ class AuthentificationService {
                         // Ici on renvoye le "AuthResponse"
                         completion(true, response, nil)
                     } catch {
-                        print("Erreur lors de la décodage:", error)
+                        print("Erreur lors du décodage:", error)
                         completion(false, nil, error)
                     }
                     
@@ -149,7 +149,7 @@ class AuthentificationService {
                         // Ici on renvoie le "AuthResponse"
                         completion(true, response, nil)
                     } catch {
-                        print("Erreur lors de la décodage:", error)
+                        print("Erreur lors du décodage:", error)
                         completion(false, nil, error)
                     }
                 } else {
