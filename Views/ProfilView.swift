@@ -12,6 +12,8 @@ struct ProfilView: View {
     // Déclarer une var qui est un état "a state" pour suivre si le bouton "Sign Out" a été appuyé
     @State private var showHomeView = false
     
+    @EnvironmentObject var userManager: UserManager
+    
     var body: some View {
         NavigationView{
             ZStack{
@@ -49,9 +51,18 @@ struct ProfilView: View {
                         //.imageScale(.large)
                     
                     // Ajout du Welcome (+ Pseudo du profil)
-                    Text("Welcome 🥳")
-                        .font(.title)
-                        .fontWeight(.black)
+                
+                    VStack {
+                               if let username = userManager.username {
+                                   Text("Welcome \(username)🥳")
+                                       .font(.title)
+                                       .fontWeight(.black)
+                               } else {
+                                   Text("Not logged in.")
+                                       .font(.title)
+                                       .fontWeight(.black)
+                               }
+                           }
                     
                     // ça permet de pousser le contenu vers le bas d'une hauteur de 200
                     Spacer()
