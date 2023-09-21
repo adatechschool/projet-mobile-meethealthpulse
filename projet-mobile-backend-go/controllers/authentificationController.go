@@ -93,6 +93,9 @@ func LoginHandler(c *gin.Context) {
 		return
 	}
 
+	// Récupérer le nom d'utilisateur à partir de foundUser
+	username := foundUser.Username
+
 	// Générer le JWT
 	token, err := generateToken(*foundUser)
 	if err != nil {
@@ -102,9 +105,10 @@ func LoginHandler(c *gin.Context) {
 
 	// Si c'est "OK" on renvoie une réponse HTTP avec un statut 200 et un message JSON que l'utilisateur vient de
 	//se connecter avec la valeur récupérée du "username" pour l'afficher sur profilView
-	c.JSON(http.StatusOK, gin.H{"message": "User was connected!", "username": user.Username, "token": token})
+	c.JSON(http.StatusOK, gin.H{"message": "User was connected!", "username": username, "token": token})
 
 	fmt.Println("Searching for email:", user.Email)
+	fmt.Println("Hello:", username)
 }
 
 func generateToken(user models.User) (string, error) {

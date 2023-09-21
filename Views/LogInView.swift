@@ -56,7 +56,7 @@ struct LogInView: View {
                     Section(header: Text("Email")) {
                         EmailView(email: $email)
                         //TextField("email@example", text: //$viewModel.email
-                                  //$email)
+                        //$email)
                         
                     }
                     
@@ -72,10 +72,10 @@ struct LogInView: View {
                                 .foregroundColor(.gray)
                         })
                     ) {
-
+                        
                         SecureField("Password", text: //$viewModel.password
                                     $password)
-                    }
+                    }}
                     .textInputAutocapitalization(.never)
 
                     Button(action: {
@@ -87,8 +87,18 @@ struct LogInView: View {
                         AuthentificationService.shared.logIn(email: email, password: password) { success, response, error in
                             if success {
                                 print("Connexion réussie!")
-                                userManager.username = username
-                                logOn.toggle()
+                                //logOn.toggle()
+                                logOn = true
+                                
+                                if let authResponse = response {
+                                    print("Nom d'utilisateur:", authResponse.username)
+                                    DispatchQueue.main.async {
+                                        userManager.username = authResponse.username
+                                               }
+                                            } else {
+                                                print("Aucune réponse du serveur.")
+                                            }
+                                
                             } else {
                                 alertMessage = error?.localizedDescription ?? "Erreur inconnue"
                                 showAlert = true
@@ -107,13 +117,13 @@ struct LogInView: View {
                     }
                     .padding()
 
-                }
-                .fullScreenCover(isPresented: $createAccount) {
-                    CreateAccountView()
-                }
-                .fullScreenCover(isPresented: $logOn) {
-                    ProfilView(isNewlyRegistered: true)
-                }
+                
+                
+            }.fullScreenCover(isPresented: $createAccount) {
+                CreateAccountView()
+            }
+            .fullScreenCover(isPresented: $logOn) {
+                ProfilView(isNewlyRegistered: true)
             }
         }
     }

@@ -138,7 +138,9 @@ struct CreateAccountView: View {
                                 // Si on arrive jusqu'ici, c'est qu'il n'y a pas d'erreur
                                 if success {
                                     print("Inscription réussie!")
-                                    userManager.username = username
+                                    DispatchQueue.main.async {
+                                                   userManager.username = username
+                                               }
                                     signUp = true
                                 }
                                 else {
