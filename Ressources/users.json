@@ -1,26 +1,9 @@
 [
     {
       "id": 1,
-      "name": "Leanne Graham",
+      "name": "Lionel Messi",
       "username": "Bret",
       "email": "Sincere@april.biz",
-      "address": {
-        "street": "Kulas Light",
-        "suite": "Apt. 556",
-        "city": "Gwenborough",
-        "zipcode": "92998-3874",
-        "geo": {
-          "lat": "-37.3159",
-          "lng": "81.1496"
-        }
-      },
-      "phone": "1-770-736-8031 x56442",
-      "website": "hildegard.org",
-      "company": {
-        "name": "Romaguera-Crona",
-        "catchPhrase": "Multi-layered client-server neural-net",
-        "bs": "harness real-time e-markets"
-      },
       "activity": "Football"
     },
     {
@@ -28,23 +11,6 @@
       "name": "Ervin Howell",
       "username": "Antonette",
       "email": "Shanna@melissa.tv",
-      "address": {
-        "street": "Victor Plains",
-        "suite": "Suite 879",
-        "city": "Wisokyburgh",
-        "zipcode": "90566-7771",
-        "geo": {
-          "lat": "-43.9509",
-          "lng": "-34.4618"
-        }
-      },
-      "phone": "010-692-6593 x09125",
-      "website": "anastasia.net",
-      "company": {
-        "name": "Deckow-Crist",
-        "catchPhrase": "Proactive didactic contingency",
-        "bs": "synergize scalable supply-chains"
-      },
       "activity": "Course"
     },
     {
@@ -52,23 +18,6 @@
       "name": "Clementine Bauch",
       "username": "Samantha",
       "email": "Nathan@yesenia.net",
-      "address": {
-        "street": "Douglas Extension",
-        "suite": "Suite 847",
-        "city": "McKenziehaven",
-        "zipcode": "59590-4157",
-        "geo": {
-          "lat": "-68.6102",
-          "lng": "-47.0653"
-        }
-      },
-      "phone": "1-463-123-4447",
-      "website": "ramiro.info",
-      "company": {
-        "name": "Romaguera-Jacobson",
-        "catchPhrase": "Face to face bifurcated interface",
-        "bs": "e-enable strategic applications"
-      },
       "activity": "Curling"
     },
     {
@@ -255,7 +204,7 @@
       },
       {
         "id": 13,
-        "name": "Olivia Clark",
+        "name": "Michael Phelps",
         "username": "OliviaC",
         "email": "olivia@example.com",
         "activity": "Natation"
@@ -276,7 +225,7 @@
       },
       {
           "id": 16,
-          "name": "Luna Foster",
+          "name": "Cristiano Ronaldo",
           "username": "LunaF",
           "email": "luna@example.com",
           "activity": "Football"
@@ -332,7 +281,7 @@
         },
         {
           "id": 24,
-          "name": "Harper Scott",
+          "name": "Ian Thorpe",
           "username": "HarperS",
           "email": "harper@example.com",
           "activity": "Natation"
@@ -360,7 +309,7 @@
         },
         {
           "id": 28,
-          "name": "Jackson Mitchell",
+          "name": "Neymar Jr.",
           "username": "JacksonM",
           "email": "jackson@example.com",
           "activity": "Football"
@@ -416,7 +365,7 @@
         },
         {
           "id": 36,
-          "name": "Grace Foster",
+          "name": "Laure Manaudou",
           "username": "GraceF",
           "email": "grace@example.com",
           "activity": "Natation"
@@ -444,7 +393,7 @@
         },
         {
           "id": 40,
-          "name": "Henry Turner",
+          "name": "Kylian Mbappé",
           "username": "HenryT",
           "email": "henry@example.com",
           "activity": "Football"
@@ -500,7 +449,7 @@
         },
         {
           "id": 48,
-          "name": "Olivia Turner",
+          "name": "Ryan Lochte",
           "username": "OliviaT",
           "email": "olivia@example.com",
           "activity": "Natation"
@@ -528,7 +477,7 @@
         },
         {
           "id": 52,
-          "name": "Oliver Green",
+          "name": "Mohamed Salah",
           "username": "OliverG",
           "email": "oliver@example.com",
           "activity": "Football"
@@ -584,7 +533,7 @@
         },
         {
           "id": 60,
-          "name": "Chloe Parker",
+          "name": "Roxana Maracineanu",
           "username": "ChloePa",
           "email": "chloe@example.com",
           "activity": "Natation"
@@ -612,7 +561,7 @@
         },
         {
           "id": 64,
-          "name": "Liam Wright",
+          "name": "Zinedine Zidane",
           "username": "LiamWr",
           "email": "liam@example.com",
           "activity": "Football"
@@ -696,7 +645,7 @@
         },
         {
           "id": 76,
-          "name": "Lucas Carter",
+          "name": "Pelé",
           "username": "LucasCa",
           "email": "lucas@example.com",
           "activity": "Football"
@@ -780,7 +729,7 @@
         },
         {
           "id": 88,
-          "name": "Chloe Foster",
+          "name": "Michel Platini",
           "username": "ChloeFo",
           "email": "chloe@example.com",
           "activity": "Football"
@@ -864,7 +813,7 @@
         },
         {
           "id": 100,
-          "name": "Avery Wright",
+          "name": "Diego Maradona",
           "username": "AveryWr",
           "email": "avery@example.com",
           "activity": "Football"
