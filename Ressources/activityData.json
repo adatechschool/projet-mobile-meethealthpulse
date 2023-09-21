@@ -58,5 +58,15 @@
         "id": 12,
         "name": "Equitation",
         "imageName": "figure.equestrian.sports",
+    },
+    {
+        "id": 13,
+        "name": "Cricket",
+        "imageName": "figure.cricket",
+    },
+    {
+        "id": 14,
+        "name": "Course en fauteuil",
+        "imageName": "figure.roll",
     }
 ]
